@@ -1,0 +1,411 @@
+\documentclass[8pt]{beamer}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+
+\usetheme{Warsaw}
+\usecolortheme{rose}
+\usepackage{multicol}
+\usepackage{epstopdf}
+\usepackage[italic]{hepnames}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{bbding}
+\lstset{breakatwhitespace,
+language=C++,
+columns=fullflexible,
+keepspaces,
+breaklines,
+tabsize=3, 
+showstringspaces=false,
+extendedchars=true}
+
+% TikZ includes!!!
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\tikzstyle{every picture}+=[remember picture]
+\input{/home/oviazlo/Desktop/beamerPresentations/myReports/latexHelpScripts/tikzGrid.tex}
+
+
+\begin{document}
+
+% custom colors
+\definecolor{olive}{rgb}{0.3, 0.4, .1}
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\definecolor{title}{RGB}{255,0,90}
+\definecolor{dgreen}{rgb}{0.,0.6,0.}
+\definecolor{gold}{rgb}{1.,0.84,0.}
+\definecolor{JungleGreen}{cmyk}{0.99,0,0.52,0}
+\definecolor{BlueGreen}{cmyk}{0.85,0,0.33,0}
+\definecolor{RawSienna}{cmyk}{0,0.72,1,0.45}
+\definecolor{Magenta}{cmyk}{0,1,0,0}
+
+\definecolor{PixelColor}{RGB}{207,232,139}
+\definecolor{SCTColor}{RGB}{167,166,255}
+\definecolor{TRTColor}{RGB}{250,224,140}
+\definecolor{grayColor}{RGB}{153,153,153}
+
+\newcommand{\yRefPosOne}{0.0}
+\newcommand{\xRefPosOne}{0.0}
+\newcommand{\yRefPosTwo}{0.0}
+\newcommand{\xRefPosTwo}{0.0}
+\newcommand{\yRefIncrementOne}{0.0}
+\newcommand{\xRefIncrementOne}{0.0}
+\newcommand{\yRefIncrementTwo}{0.0}
+\newcommand{\xRefIncrementTwo}{0.0}
+
+\graphicspath{ {/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/Sep27_2017/} }
+\DeclareGraphicsExtensions{.eps, .pdf, .png}
+
+\newcommand{\myBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+}
+
+% For nice block (provided by Oleh)
+\tikzstyle{mybox} = [draw=red, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+    
+\tikzstyle{PixelBox} = [draw=PixelColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{SCTBox} = [draw=SCTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{TRTBox} = [draw=TRTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+
+% poster advertisement
+\newcommand{\myCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+  }
+}
+
+\newcommand{\mySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\small #2}}
+    }\par
+  }
+}
+
+\newcommand{\myVerySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\scriptsize #2}}
+    }\par
+  }
+}
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\newcommand{\myNode}{\tikz[baseline,inner sep=1pt] \node[anchor=base]}
+
+\definecolor{light-gray}{gray}{0.95}
+% poster advertisement
+
+
+\title[ Calorimeter performance studies \hspace{13.5em}\insertframenumber/
+\inserttotalframenumber]{ Calorimeter performance studies }
+
+
+	\author[Oleksandr Viazlo]{Oleksandr Viazlo \\ 
+% 	{\small ???}
+	}
+	\institute{\small CERN\\} 
+	
+       
+	\date{27 September 2017}
+
+% 	\logo{ \ifplacelogo \includegraphics[height=1.8cm]{./ID_week2/lund_uni-logo_s.pdf} \hspace{0.4cm} \fi}
+
+	
+%    	\frame{\titlepage}
+
+   	
+
+\placelogofalse
+
+%*****************************************************************************
+\begin{frame}{\large \large Introduction}
+ 
+\renewcommand{\yRefPosOne}{0.4}
+\renewcommand{\xRefPosOne}{2.5}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+
+\node [Box] at (\xRefPosOne+2.5,\yRefPosOne) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item First look on Pandora single particle performance: $\mu$-, $\pi$-, $e$-, $\gamma$ and $K_L^0$ \\ \vspace{0.2cm}
+      \item Particle gun with isotrop distribution and energies: 1, 2, 5, 10, 20 ,50 GeV \\ \vspace{0.2cm} 
+      \item Efficiency defined as: \\ \vspace{0.1cm}
+      \begin{itemize}
+       \item denominator: number of truth particles which don't decay in Tracker 
+       \item numerator: number of PFOs with properly reconstructed type (consider only most energetic PFO in the event) 
+      \end{itemize}
+
+    \end{itemize}
+  \end{minipage}
+};
+
+\node [Box] at (\xRefPosOne+2.5,\yRefPosOne-4) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Pandora PFO types: $\mu$-, $\pi$-, $e$-, $\gamma$ and neutron 
+    \end{itemize}
+  \end{minipage}
+};
+
+\end{tikzpicture}
+
+  
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Performance plots: muons}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{mu-.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$(E_{PFO}-E_{truth})/E_{truth}$}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.4) (box){%
+\myCenterBox{Efficiency}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$\sigma(E_{PFO})/E_{truth}$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.4) (box){%
+\myCenterBox{$E_{truth} = 50$ GeV}
+}; 
+  
+\node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item 1, 2 and part of 5 GeV muons are reconstructed as pions
+    \end{itemize}
+  \end{minipage}
+};
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Performance plots: pions}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{pi-.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$(E_{PFO}-E_{truth})/E_{truth}$}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.4) (box){%
+\myCenterBox{Efficiency}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$\sigma(E_{PFO})/E_{truth}$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.4) (box){%
+\myCenterBox{$E_{truth} = 50$ GeV}
+}; 
+  
+\node [Box] at (\xRefPosOne+1,\yRefPosOne-4.15) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item 1.5$\%$ of pions are misreconstructed as electrons
+      \item often there is additional gamma or neutron PFO 
+    \end{itemize}
+  \end{minipage}
+};
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Performance plots: electrons}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{e-.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$(E_{PFO}-E_{truth})/E_{truth}$}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.4) (box){%
+\myCenterBox{Efficiency}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$\sigma(E_{PFO})/E_{truth}$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.4) (box){%
+\myCenterBox{$E_{truth} = 50$ GeV}
+}; 
+  
+\node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Bremsstrahlung decreases electron reconstruction efficiency
+    \end{itemize}
+  \end{minipage}
+};
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Performance plots: gamma}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{gamma.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$(E_{PFO}-E_{truth})/E_{truth}$}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.4) (box){%
+\myCenterBox{Efficiency}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$\sigma(E_{PFO})/E_{truth}$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.4) (box){%
+\myCenterBox{$E_{truth} = 50$ GeV}
+}; 
+  
+% \node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+%   \begin{minipage}{\textwidth}
+%     \begin{itemize}
+%       \item ???
+%     \end{itemize}
+%   \end{minipage}
+% };
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Performance plots: $K^{0}_{L}$}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{kaon0L.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$(E_{PFO}-E_{truth})/E_{truth}$}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.4) (box){%
+\myCenterBox{Efficiency}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$\sigma(E_{PFO})/E_{truth}$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.4) (box){%
+\myCenterBox{$E_{truth} = 50$ GeV}
+}; 
+%   
+% \node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+%   \begin{minipage}{\textwidth}
+%     \begin{itemize}
+%       \item ???
+%     \end{itemize}
+%   \end{minipage}
+% };
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large PID efficiency vs. theta}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{thetaEff.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.7) (box){%
+\myCenterBox{$e$-}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.3) (box){%
+\myCenterBox{$K_L^0$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.7) (box){%
+\myCenterBox{gamma}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.3) (box){%
+\myCenterBox{$\pi$-}
+}; 
+  
+% \node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+%   \begin{minipage}{\textwidth}
+%     \begin{itemize}
+%       \item ???
+%     \end{itemize}
+%   \end{minipage}
+% };
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+\end{document}
+

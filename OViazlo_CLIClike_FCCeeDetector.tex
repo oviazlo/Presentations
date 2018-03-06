@@ -150,52 +150,77 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
 
- \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.15,\yRefPosOne-1.86)
-    {\includegraphics[width=7.8cm]{FCCee_lumi_vs_others.png}};
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.35,\yRefPosOne-2.3)
+    {\includegraphics[width=7.8cm]{FCCee_lumi_vs_others_v2.png}};
 
 
-\node [Box] at (\xRefPosOne-0.5,\yRefPosOne+2.3) (box){%
-\begin{minipage}{\textwidth}
+\node [Box] at (\xRefPosOne-0.5,\yRefPosOne+2.1) (box){%
+\begin{minipage}{1.1\textwidth}
 
  \begin{itemize}
-  \item FCC-ee is a high-luminosity, high-precision $e^+e^-$ circular collider with four operational energy regimes: Z, WW, HZ, tt. \\[0.3cm]
-  \item A high-luminosity and high-precision machine requires small experimental uncertainties which set strict requirements on the detector \\[0.3cm]
+  \item FCC-ee is a high-luminosity, high-precision $e^+e^-$ circular collider with four operational energy regimes: Z, WW, HZ, tt. \\[0.1cm]
+  \item Fixed 100 MW Synchrotron Radiation (SR) at all energies $\to$ \\
+  Larger beam currents possible at lower energies\\[0.1cm]
+  \item High statistical accuracies $\to$ Small experimental uncertainties are needed $\to$ \\
+  Demands state-of-the-art performance for all detector subsystems \\[0.1cm]
   \item This presentation will cover one of the proposed detector designs for FCC-ee which is based on the detector proposal for CLIC\\[0.05cm]
   
  \end{itemize}
 \end{minipage}
 };
  
-\node [Box] at (\xRefPosOne+7.5,\yRefPosOne-0.9) (box){%
+\node [Box] at (\xRefPosOne+7,\yRefPosOne-0.9) (box){%
 \begin{minipage}{\textwidth}
-{\tiny
+{\small
   \begin{tabular}{c|cc}
 	  \hline
-	       &  Beam Energy & Bunch spacing \\
-	       & [GeV] & [ns] \\
+
+	       &  Beam Energy & Luminosity  \\
+	       &  [GeV] & [10$^{34}$ cm$^{-2}$s$^{-1}$] \\
 	  \hline
-	  Z & 45.6  & 20  \\
-	  WW & 80  & 166  \\
-	  HZ & 120  & 846  \\
-	  tt & 182.5 & 8533  \\
+	  Z  & 45.6 & 230 \\
+	  WW & 80 & 32 \\
+	  HZ & 120 & 7.8 \\
+	  tt & 182.5 & 1.5 \\
+	  
+
+
+	  
+% 	       &  Beam Energy & Bunch spacing \\
+% 	       & [GeV] & [ns] \\
+% 	  \hline
+% 	  Z & 45.6  & 20  \\
+% 	  WW & 80  & 166  \\
+% 	  HZ & 120  & 846  \\
+% 	  tt & 182.5 & 8533  \\
 	  \hline
 	\end{tabular}
 }
 \end{minipage}
 };
 
-\node [Box] at (\xRefPosOne+7.5,\yRefPosOne-3.1) (box){%
+\node [Box] at (\xRefPosOne+7,\yRefPosOne-3.1) (box){%
 \begin{minipage}{\textwidth}
-{\tiny
+{\small
   \begin{tabular}{c|cc}
 	  \hline
-	       &  Bunch intensity & Luminosity  \\
-	       &  [10$^{11}$] & [10$^{34}$ cm$^{-2}$s$^{-1}$] \\
+	  
+
+	  	       &  Bunch intensity & Bunch spacing  \\
+	       &  [10$^{11}$] & [ns] \\
 	  \hline
-	  Z  & 1.7 & 230 \\
-	  WW & 1.5 & 32 \\
-	  HZ & 1.5 & 7.8 \\
-	  tt & 2.8 & 1.5 \\
+	  Z  &   1.7 & 20 \\
+	  WW & 1.5 & 166 \\
+	  HZ & 1.5 & 846 \\
+	  tt & 2.8 & 8533 \\
+	  
+% 	       &  Bunch intensity & Luminosity  \\
+% 	       &  [10$^{11}$] & [10$^{34}$ cm$^{-2}$s$^{-1}$] \\
+% 	  \hline
+% 	  Z  & 1.7 & 230 \\
+% 	  WW & 1.5 & 32 \\
+% 	  HZ & 1.5 & 7.8 \\
+% 	  tt & 2.8 & 1.5 \\
 	  \hline
 	\end{tabular}
 }
@@ -205,6 +230,27 @@ extendedchars=true}
 
 \end{tikzpicture}
 \end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+% \bgroup
+% \setbeamercolor{background canvas}{bg=white}
+\begin{frame}{}
+
+    \begin{tikzpicture}[overlay]
+
+    %% HELPER draw advanced helping grid with axises:
+%     \draw (0,-5) to[grid with coordinates] (11,3);
+
+    \node[right] (textNode) at (4,0) {
+      { \large \bf Detector Design }
+    };
+    
+
+    \end{tikzpicture}
+
+\end{frame}
+% \egroup
 %*****************************************************************************
 
 % %*****************************************************************************
@@ -241,13 +287,16 @@ extendedchars=true}
     {\includegraphics[width=10.8cm]{compensatingAndShieldingSolenoids.png}};
 
  
- \node [Box] at (\xRefPosOne,\yRefPosOne+1) (box){%
+ \node [Box] at (\xRefPosOne,\yRefPosOne+1.5) (box){%
     \begin{minipage}{\textwidth}
 
   \begin{itemize}
-   \item Final focusing quadrupole chosen to be at 2.2m from IP - inside the detector
-   \item To protect the beam from the detector magnetic field an additional compensating solenoid is needed
-   \item Constrains {\bf the maximum possible detector magnetic field to 2T} (while the CLIC proposal assumes 4T magnetic field)
+   \item In order to maximize luminosity final focusing quadrupole chosen to be at 2.2m from IP - {\bf inside the detector}
+%    (together with a shielding solenoid)
+%    \item To protect the beam from the detector magnetic field an additional compensating solenoid is needed
+   \item Compensating solenoid to prevent emittance blow-up from detector magnetic field 
+   due to non-zero crossing angle is even closer to the IP
+   \item Constrains {\bf the maximum possible detector magnetic field to 2T} \\(while the CLIC proposal assumes 4T magnetic field)
   \end{itemize}
 
     \end{minipage}
@@ -266,19 +315,21 @@ extendedchars=true}
 
  \begin{tikzpicture}[overlay]
  
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne+\xRefIncrementOne,\yRefPosOne-2)
-    {\includegraphics[width=7.8cm]{IR_with_VertexD_MSullivan.png}};
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne+\xRefIncrementOne-1,\yRefPosOne-2)
+    {\includegraphics[width=7.8cm]{IR_with_VertexD_MSullivan_v2.png}};
 
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne-5+\xRefIncrementOne,\yRefPosOne-2)
-    {\includegraphics[width=1.5cm]{MDI_region_legend.png}};
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne-6+\xRefIncrementOne,\yRefPosOne-2)
+    {\includegraphics[width=1.5cm]{MDI_region_legend_v2.png}};
  
  \node [Box] at (\xRefPosOne,\yRefPosOne+2) (box){%
     \begin{minipage}{\textwidth}
 
   \begin{itemize}
-   \item MDI region is defined within 150mrad ??? \\[0.1cm]
-   \item Small beampipe radius - allows placing innermost pixel layer at 17mm
-   \item Additional shielding is foreseen to suppress synchrotron radiation background in the detector innermost layers of the detector (see picture)
+   \item Central detector has to be fitted within $\pm$150mrad $\to$ constrains forward region \\[0.1cm]
+%    \item Small beampipe radius - allows placing innermost pixel layer at 17mm
+   \item Luminosity monitor (LumiCal) is inside MDI region
+   \item Additional tantalum shielding is foreseen to suppress synchrotron radiation background in the 
+   innermost layers of the detector (see picture)
    
   \end{itemize}
 \end{minipage}
@@ -317,8 +368,10 @@ extendedchars=true}
   \begin{itemize}
    \item Full silicon VTX and Tracker:  
    \begin{itemize}
-    \item r$_{inner} = 17$mm, r$_{outer} = 2.1$m 
-    \item $\geqslant$12 hits per track \\[0.3cm]
+    \item $\geqslant$12 hits per track 
+    \item r$_{inner} = 17$mm, r$_{outer} = 2.1$m \\
+         {\color{gray} r$_{inner} = 31$mm, r$_{outer} = 1.5$m - CLIC}\\[0.3cm]
+    
    \end{itemize}
 
    
@@ -375,16 +428,16 @@ extendedchars=true}
   \begin{itemize}
    \item Dedicated software for FCC-ee is under development.
    \item For performance study of the CLIC-inspired detector for FCC-ee 
-	 one can benefit from the fully functional and tested iLCSoft software used by the CLIC and ILC community. \\[0.4cm]
+	 one can benefit from the fully functional and tested \href{https://github.com/iLCSoft}{\color{blue} iLCSoft} software used by the CLIC and ILC community. \\[0.4cm]
    
-   \item Detector geometry description and event simulation: DD4hep
-   \item Event Reconstruction: Marlin\\[0.4cm]
+   \item Detector geometry description and event simulation: \href{https://github.com/AIDASoft/DD4hep}{\color{blue} DD4hep}
+   \item Event Reconstruction: \href{https://github.com/iLCSoft/Marlin}{\color{blue} Marlin}\\[0.4cm]
    
    \item Track Pattern recognition: TruthTracking or ConformalTracking
-   \item Particle Flow Reconstruction: PandoraPFA \\[0.6cm]
+   \item Particle Flow Reconstruction: \href{https://github.com/PandoraPFA}{\color{blue} PandoraPFA} \\[0.6cm]
    
    \item Detector model: \\
-   \href{https://github.com/iLCSoft/lcgeo/tree/master/FCCee/compact/FCCee_o1_v01}{https://github.com/iLCSoft/lcgeo/tree/master/FCCee/compact/FCCee$\_$o1$\_$v01}
+   \href{https://github.com/iLCSoft/lcgeo/tree/master/FCCee/compact/FCCee_o1_v01}{\color{blue}  https://github.com/iLCSoft/lcgeo/tree/master/FCCee/compact/FCCee$\_$o1$\_$v01}
   \end{itemize}
 
     \end{minipage}
@@ -421,7 +474,7 @@ extendedchars=true}
        \item Inner and Outer Trackers - 3 barrel layers each and 4-7 disks
        \item Single-point resolution (sigma): VTX - 3$\times$3 $\mu$m; IT - 7$\times$300$\mu$m; OT - 7$\times$3000$\mu$m
        \item More than 12 hits per track over theta range 8.6$^{\circ}$ - 171.4$^{\circ}$
-       \item Material budget has to be revised due to the need for cooling (small effect on tracking ??? )
+       \item Material budget: 0.2$\%$X0 per VTX layer - has to be revised due to the need for cooling
 %        (small affect on tracking is expected)
       \end{itemize}
 
@@ -454,6 +507,26 @@ extendedchars=true}
 \end{frame}
 %*****************************************************************************
 
+%*****************************************************************************
+% \bgroup
+% \setbeamercolor{background canvas}{bg=white}
+\begin{frame}{}
+
+    \begin{tikzpicture}[overlay]
+
+    %% HELPER draw advanced helping grid with axises:
+%     \draw (0,-5) to[grid with coordinates] (11,3);
+
+    \node[right] (textNode) at (3.5,0) {
+      { \large \bf FCC-ee backgrounds }
+    };
+    
+
+    \end{tikzpicture}
+
+\end{frame}
+% \egroup
+%*****************************************************************************
 
 %*****************************************************************************
 \begin{frame}{\large \large Background estimate}
@@ -480,18 +553,18 @@ extendedchars=true}
     \begin{minipage}{0.5\textwidth}
 
   \begin{itemize}
-  \item Synchrotron radiation (shielding ??? )\\[0.1cm]
   \item $\gamma\gamma \to e^+e^-$\\[0.1cm]
   \item $\gamma\gamma \to$ hadrons \\[0.1cm]
+  \item Synchrotron radiation\\[0.1cm]
  \end{itemize}
     \end{minipage}
 };
 
 \node [Box] at (\xRefPosOne-4.5,\yRefPosOne+3) (box){%
-\myCenterBox{Background Estimate}
+\myCenterBox{FCC-ee Backgrounds}
 }; 
 
-\node [Box] at (\xRefPosOne-3.4,\yRefPosOne-1.6) (box){%
+\node [Box] at (\xRefPosOne-3.4,\yRefPosOne-2) (box){%
 \begin{minipage}{0.5\textwidth}
   \begin{itemize}
   \item Full simulation (GuineaPig, GEANT/DD4hep)\\[0.2cm]
@@ -502,7 +575,7 @@ extendedchars=true}
     \item Cluster multiplicity = 5 for pixels and = 2.5 for strips\\[0.2cm]
   \end{itemize}
   \item Safety factor: 5\\[0.2cm]
-  \item Estimate of the occupancy in the VTX and Tracker detectors
+  \item Occupancy is estimated in the VTX and Tracker detectors
 
   \end{itemize}
 \end{minipage}
@@ -510,7 +583,7 @@ extendedchars=true}
 
 
 \node [Box] at (\xRefPosOne-4,\yRefPosOne+0.5) (box){%
-\myCenterBox{$\gamma\gamma \to e^+e^-$ estimate}
+\myCenterBox{Background Estimation}
 }; 
 
 % \node [Box] at (\xRefPosOne-3.4,\yRefPosOne-3.3) (box){%
@@ -539,10 +612,10 @@ extendedchars=true}
 
 
 %*****************************************************************************
-\begin{frame}{\large \large Background Estimate}
+\begin{frame}{\large \large Background Estimate: $\gamma\gamma \to e^+e^-$}
 % TODO change legend for electron plot. ``Nominal'' -> ``Default Pandora''
 
-\renewcommand{\yRefPosOne}{0}
+\renewcommand{\yRefPosOne}{-0.5}
 \renewcommand{\xRefPosOne}{5.3}
 \renewcommand{\xRefIncrementOne}{5.5}
 \begin{tikzpicture}[overlay]
@@ -571,13 +644,14 @@ extendedchars=true}
 
 
 
-\node [Box] at (\xRefPosOne-3,\yRefPosOne-4) (box){%
+\node [Box] at (\xRefPosOne+3,\yRefPosOne-2.8) (box){%
 \begin{minipage}{0.6\textwidth}
   \begin{itemize}
-   \item max. 0.05$\%$ per BX {\tiny (both for 91 and 350 GeV)}
-   \item 1$\%$ occupancy $\to$ 0.4 $\mu s$ read-out time
+   \item Maximum 0.05$\%$ per BX both for 91.2 and 350 GeV cases from $\gamma\gamma \to e^+e^-$ background
+%    \item 1$\%$ occupancy $\to$ 0.4 $\mu s$ read-out time\\[0.25cm]
+   \item Need $\approx$0.4 $\mu s$ read-out time at 91.2 GeV, to limit the occupancy to 1$\%$
    \item Study at 365 GeV center-of-mass energy is ongoing. 
-	Preliminary results are of similar size.
+	Preliminary results are of similar size as for 350 GeV case
   \end{itemize}
 \end{minipage}
 };
@@ -586,23 +660,23 @@ extendedchars=true}
 % \myCenterBox{Detector occupancy}
 % }; 
 
-\node [Box] at (\xRefPosOne,\yRefPosOne-2.5) (box){%
-\begin{minipage}{\textwidth}
+\node [Box] at (\xRefPosOne-3,\yRefPosOne-2.99) (box){%
+\begin{minipage}{0.5\textwidth}
   \begin{tabular}{c|cc}
 	  \hline
 	    E$_{CM}$   & 91.2 GeV & 350 GeV \\
 	  \hline
-	  VTX Barrel & 0.05 & 0.05 \\
-	  VTX Endcap & 0.02 & 0.03 \\
-	  Tracker B. & 0.002 & 0.0025 \\
-	  Tracker E. & 0.014 & 0.0075 \\
+	  VTX Barrel & 0.05 $\%$ & 0.05 $\%$ \\
+	  VTX Endcap & 0.02 $\%$ & 0.03 $\%$ \\
+	  Tracker B. & 0.002 $\%$ & 0.0025 $\%$ \\
+	  Tracker E. & 0.014 $\%$ & 0.0075 $\%$ \\
 	  \hline
 	\end{tabular}
 
 \end{minipage}
 };
 
-\node [Box] at (\xRefPosOne-3,\yRefPosOne-1.3) (box){%
+\node [Box] at (\xRefPosOne-3,\yRefPosOne-1.8) (box){%
 \myCenterBox{\small Maximum occupancy per BX}
 }; 
 
@@ -633,29 +707,49 @@ extendedchars=true}
 \begin{frame}{\large \large Background Estimate}
 % TODO change legend for electron plot. ``Nominal'' -> ``Default Pandora''
 
-\renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
+\renewcommand{\yRefPosOne}{4}
+\renewcommand{\xRefPosOne}{-0.7}
+\renewcommand{\xRefIncrementOne}{-0.5}
 \begin{tikzpicture}[overlay]
 
 
-\node [Box] at (\xRefPosOne-3,\yRefPosOne-1.3) (box){%
-\myCenterBox{\small $\gamma\gamma \to$ hadrons estimate}
+\node [Box] at (\xRefPosOne+9,\yRefPosOne-1.3) (box){%
+\myCenterBox{\small Synchrotron radiation}
 }; 
 
- \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne-3.13)
+\node [Box] at (\xRefPosOne+9,\yRefPosOne-2.8) (box){%
+\begin{minipage}{0.5\textwidth}
+  \begin{itemize}
+   \item Study is ongoing
+   \item Preliminary results show negligable effect for 91.2 GeV case and comparable effect to $\gamma\gamma \to e^+e^-$ for 350/365 GeV cases
+  \end{itemize}
+\end{minipage}
+};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+9,\yRefPosOne-6)
+    {\includegraphics[width=5.5cm]{SR_nicePict.png}};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne-3.53)
     {\includegraphics[width=4.5cm]{Yorgos/hadrons.png}};
 
-    \node[inner sep=0pt] (tmp) at (\xRefPosOne+2.3,\yRefPosOne-4)
+    \node[inner sep=0pt] (tmp) at (\xRefPosOne+2.3,\yRefPosOne-4.4)
   {\tiny WORK IN PROGRESS};
     
 \node [Box] at (\xRefPosOne+3,\yRefPosOne-1.3) (box){%
 \myCenterBox{\small Estimate of $\gamma\gamma \to$ hadrons bkg. }
 }; 
-\node [Box] at (\xRefPosOne+3,\yRefPosOne-1.6) (box){%
-\myCenterBox{\tiny Hits per BX per subdetector}
+\node [Box] at (\xRefPosOne+3,\yRefPosOne-2) (box){%
+\myCenterBox{\tiny Hits per BX per subdetector at 91.2 GeV}
 }; 
 
+\node [Box] at (\xRefPosOne+3,\yRefPosOne-6.1) (box){%
+\begin{minipage}{0.5\textwidth}
+  \begin{itemize}
+   \item Size of $\gamma\gamma \to$ hadrons background is \\ 
+   {\bf 2 orders of magnitude lower} than from $\gamma\gamma \to e^+e^-$ $\to$ negligable effect
+  \end{itemize}
+\end{minipage}
+};
 
 
 
@@ -666,7 +760,26 @@ extendedchars=true}
 \end{frame}
 %*****************************************************************************
 
+%*****************************************************************************
+% \bgroup
+% \setbeamercolor{background canvas}{bg=white}
+\begin{frame}{}
 
+    \begin{tikzpicture}[overlay]
+
+    %% HELPER draw advanced helping grid with axises:
+%     \draw (0,-5) to[grid with coordinates] (11,3);
+
+    \node[right] (textNode) at (2,0) {
+      { \large \bf Tracking and Calorimetry Performance }
+    };
+    
+
+    \end{tikzpicture}
+
+\end{frame}
+% \egroup
+%*****************************************************************************
 
 
 %*****************************************************************************
@@ -683,7 +796,7 @@ extendedchars=true}
   \begin{minipage}{0.6\textwidth}
  \begin{itemize}
   \item Track fitting is done in the conformal space:\\[1.4cm]
-  \item Cellular automaton is used to perform straight line search
+  \item Cellular automaton is used to perform \\straight line search
     \end{itemize}
   \end{minipage}
 };
@@ -784,7 +897,7 @@ extendedchars=true}
 \end{frame}
 %*****************************************************************************
 %*****************************************************************************
-\begin{frame}{\large \large Momentum and Transverse Impact Parameter Resolution}
+\begin{frame}{\large \large Tracking Efficiency}
 
 \renewcommand{\yRefPosOne}{0}
 \renewcommand{\xRefPosOne}{5.3}
@@ -793,10 +906,16 @@ extendedchars=true}
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1)
     {\includegraphics[width=6cm]{c_pt_Zuds91GeV.pdf}};
+  \node [Box] at (\xRefPosOne-2.8,\yRefPosOne+3.3) (box){%
+    \myCenterBox{\small Z$\to q\bar{q}$ (q=u,d,s), m$_{Z}$ = 91.2 GeV}
+  }; 
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1)
     {\includegraphics[width=6cm]{c_pt_Zuds380GeV.pdf}};
-    
+   \node [Box] at (\xRefPosOne+3.2,\yRefPosOne+3.3) (box){%
+    \myCenterBox{\small Z$\to q\bar{q}$ (q=u,d,s), m$_{Z}$ = 380 GeV}
+  }; 
+  
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.3,\yRefPosOne+2.85)
   {\tiny WORK IN PROGRESS};
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+2.7,\yRefPosOne+2.85)
@@ -887,9 +1006,9 @@ Tracking efficiency = $\dfrac{N^{reconstructed}_{tracks}}{N^{reconstructable}_{p
     \begin{minipage}{0.5\textwidth}
     \begin{itemize}
        \item steel + scintillator sampling calorimeter\\[0.1cm]
-       \item Cell size: 5x5 mm$^2$ ??? \\[0.1cm]
+       \item Cell size: 3x3 cm$^2$ \\[0.1cm]
        \item 44 layers, 5.5 $\lambda_I$\\[0.1cm]
-       \item Thickness is inspired by HCAL for ILD detector (optimized for 500 GeV)
+       \item Depth is inspired by HCAL for ILD detector (optimized for 500 GeV)
     \end{itemize}
     \end{minipage}
 };
@@ -1092,7 +1211,7 @@ Tracking efficiency = $\dfrac{N^{reconstructed}_{tracks}}{N^{reconstructable}_{p
 	 \item 91 GeV: \hspace{0.07cm} 4.4 $\%$
 	 \item 380 GeV: 3.5 $\%$ \\ [0.2cm]
 	\end{itemize}
-	\item comparable resolution with CLIC detector 
+	\item comparable resolution with the CLIC detector 
 
       \end{itemize}
     \end{minipage}
@@ -1116,10 +1235,13 @@ Tracking efficiency = $\dfrac{N^{reconstructed}_{tracks}}{N^{reconstructable}_{p
 \node [Box] at (\xRefPosOne,\yRefPosOne) (box){%
   \begin{minipage}{0.99\textwidth}
  \begin{itemize}
-  \item The design of CLIC-inspired all-silicon detector for FCC-ee has been presented\\[0.2cm]
-  \item Preliminary background studies demonstrate need of relatively fast readout electronics ($<1 \mu s$) for VTX and Tracker detectors\\[0.2cm]
-  \item Performance studies based on the full simulation (iLCSoft) demonstrate comparable tracking and 
-  calorimetry performance of the proposed detector w.r.t. detector for CLIC \\[0.5cm]
+  \item The design of CLIC-inspired all-silicon detector for FCC-ee has been presented\\[0.6cm]
+  \item Background studies demonstrate that dominant contribution to the detector occupancy originates 
+  from $\gamma\gamma \to e^+e^-$ which constrains electronics readout time to $\approx$0.4 $\mu s$ 
+  for VTX and Tracker detectors at 91.2 GeV. \\At 365 GeV it is much more relaxed because of the much larger bunch spacing 
+  (8533 ns vs. 20 ns) \\[0.6cm]
+  \item Performance studies based on the full simulation demonstrate that proposed detector design for FCC-ee provides
+  comparable tracking and calorimetry performance w.r.t. CLIC detector \\[0.6cm]
 %   \item The second detector design which consist of drift chamber and dual readout calorimeter 
   
 
@@ -1146,6 +1268,10 @@ Tracking efficiency = $\dfrac{N^{reconstructed}_{tracks}}{N^{reconstructable}_{p
 
 % \node[fancytitle, right=15pt] at (box.north west) {Next steps};
 % \node[fancytitle, right=15pt] at (box.north west) {LUCID};
+
+\node[right] (textNode) at (3,-3) {
+      { \large \bf Thank you for attention! }
+    };
 
 \end{tikzpicture}
   
@@ -1239,6 +1365,48 @@ Tracking efficiency = $\dfrac{N^{reconstructed}_{tracks}}{N^{reconstructable}_{p
 %  
 % \end{frame}
 % %*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large FCC-ee detector}
+ 
+\renewcommand{\yRefPosOne}{0}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+
+ \node[TRTBox] (tmp) at (\xRefPosOne,\yRefPosOne-0.5)
+  { 
+    \begin{minipage}{0.8\textwidth}
+
+    \resizebox{\columnwidth}{!}{%
+      \begin{tabular}{lccc}
+	 & CLIC & & FCC-ee \\[0.18cm]
+	VTX Barrel & 31-60 mm & $\Longrightarrow$ & 17-59 mm \\[0.18cm]
+	VTX Endcap & Spirals & $\Longrightarrow$ & Disks \\[0.18cm]
+	Tracker radius & 1486 mm & $\Longrightarrow$ & 2100 mm \\[0.18cm]
+% 	ECAL thickness & 202 mm & $\Longrightarrow$ & 202 mm \\[0.18cm]
+% 	HCAL thickness & 44 $\times$ 7.5 $\lambda_0$ & $\Longrightarrow$ & 44 $\times$ 5.5 $\lambda_0$ \\[0.18cm]
+	ECAL thickness & 40 layers, 22 X$_0$ & $\Longrightarrow$ & 40 layers, 22 X$_0$ \\[0.18cm]
+	HCAL thickness & 60 layers, 7.5 $\lambda_I$ & $\Longrightarrow$ & 44 layers, 5.5 $\lambda_I$ \\[0.18cm]
+	Yoke thickness & 1989 mm & $\Longrightarrow$ & 1521 mm \\[0.18cm]
+	MDI (forward region) &  & $\Longrightarrow$ & $<$ 150 mrad \\[0.4cm]
+	Solenoid field & 4 Tesla & $\Longrightarrow$ & 2 Tesla \\
+	
+      \end{tabular}%
+    }
+    \end{minipage}
+  };
+  
+
+
+\node [Box] at (\xRefPosOne,\yRefPosOne+2.6) (box){%
+\myCenterBox[TRTColor]{Overall dimensions of CLIC and FCC-ee detectors}
+};
+  
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
 
 
 \backupend

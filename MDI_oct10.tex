@@ -1,0 +1,404 @@
+\documentclass[8pt]{beamer}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+
+\usetheme{Warsaw}
+\usecolortheme{rose}
+\usepackage{multicol}
+\usepackage{epstopdf}
+\usepackage[italic]{hepnames}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{bbding}
+\lstset{breakatwhitespace,
+language=C++,
+columns=fullflexible,
+keepspaces,
+breaklines,
+tabsize=3, 
+showstringspaces=false,
+extendedchars=true}
+
+% TikZ includes!!!
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\tikzstyle{every picture}+=[remember picture]
+\input{/home/oviazlo/Desktop/beamerPresentations/myReports/latexHelpScripts/tikzGrid.tex}
+
+
+\begin{document}
+
+% custom colors
+\definecolor{olive}{rgb}{0.3, 0.4, .1}
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\definecolor{title}{RGB}{255,0,90}
+\definecolor{dgreen}{rgb}{0.,0.6,0.}
+\definecolor{gold}{rgb}{1.,0.84,0.}
+\definecolor{JungleGreen}{cmyk}{0.99,0,0.52,0}
+\definecolor{BlueGreen}{cmyk}{0.85,0,0.33,0}
+\definecolor{RawSienna}{cmyk}{0,0.72,1,0.45}
+\definecolor{Magenta}{cmyk}{0,1,0,0}
+
+\definecolor{PixelColor}{RGB}{207,232,139}
+\definecolor{SCTColor}{RGB}{167,166,255}
+\definecolor{TRTColor}{RGB}{250,224,140}
+\definecolor{grayColor}{RGB}{153,153,153}
+
+\newcommand{\yRefPosOne}{0.0}
+\newcommand{\xRefPosOne}{0.0}
+\newcommand{\yRefPosTwo}{0.0}
+\newcommand{\xRefPosTwo}{0.0}
+\newcommand{\yRefIncrementOne}{0.0}
+\newcommand{\xRefIncrementOne}{0.0}
+\newcommand{\yRefIncrementTwo}{0.0}
+\newcommand{\xRefIncrementTwo}{0.0}
+
+\graphicspath{ {/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/} }
+\DeclareGraphicsExtensions{.eps, .pdf, .png}
+
+\newcommand{\myBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+}
+
+% For nice block (provided by Oleh)
+\tikzstyle{mybox} = [draw=red, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+    
+\tikzstyle{PixelBox} = [draw=PixelColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{SCTBox} = [draw=SCTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{TRTBox} = [draw=TRTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+
+% poster advertisement
+\newcommand{\myCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+  }
+}
+
+\newcommand{\mySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\small #2}}
+    }\par
+  }
+}
+
+\newcommand{\myVerySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\scriptsize #2}}
+    }\par
+  }
+}
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\newcommand{\myNode}{\tikz[baseline,inner sep=1pt] \node[anchor=base]}
+
+\definecolor{light-gray}{gray}{0.95}
+% poster advertisement
+
+
+\title[ Calorimeter performance studies \hspace{13.5em}\insertframenumber/
+\inserttotalframenumber]{ Calorimeter performance studies }
+
+
+	\author[Oleksandr Viazlo]{Oleksandr Viazlo \\ 
+% 	{\small ???}
+	}
+	\institute{\small CERN\\} 
+	
+       
+	\date{27 September 2017}
+
+% 	\logo{ \ifplacelogo \includegraphics[height=1.8cm]{./ID_week2/lund_uni-logo_s.pdf} \hspace{0.4cm} \fi}
+
+	
+%    	\frame{\titlepage}
+
+   	
+
+\placelogofalse
+
+%*****************************************************************************
+\begin{frame}{\large \large Introduction}
+ 
+\renewcommand{\yRefPosOne}{0.4}
+\renewcommand{\xRefPosOne}{2.5}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+
+\node [Box] at (\xRefPosOne+2.5,\yRefPosOne) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item First look on Pandora single particle performance: $\mu$-, $\pi$-, $e$-, $\gamma$ and $K_L^0$ \\ \vspace{0.2cm}
+      \item Particle gun with isotrop distribution and energies: 1, 2, 5, 10, 20 ,50 GeV \\ \vspace{0.2cm} 
+      \item Efficiency defined as: \\ \vspace{0.1cm}
+      \begin{itemize}
+       \item denominator: number of truth particles which don't decay in Tracker 
+       \item numerator: number of PFOs with properly reconstructed type (consider only most energetic PFO in the event) 
+      \end{itemize}
+
+    \end{itemize}
+  \end{minipage}
+};
+
+\node [Box] at (\xRefPosOne+2.5,\yRefPosOne-4) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Pandora PFO types: $\mu$-, $\pi$-, $e$-, $\gamma$ and neutron 
+    \end{itemize}
+  \end{minipage}
+};
+
+\end{tikzpicture}
+
+  
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Performance plots: electrons}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{../Sep27_2017/e-.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$(E_{PFO}-E_{truth})/E_{truth}$}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.4) (box){%
+\myCenterBox{Efficiency}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.6) (box){%
+\myCenterBox{$\sigma(E_{PFO})/E_{truth}$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.4) (box){%
+\myCenterBox{$E_{truth} = 50$ GeV}
+}; 
+  
+\node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Bremsstrahlung decreases electron reconstruction efficiency
+    \end{itemize}
+  \end{minipage}
+};
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Electron ID efficiency vs. Energy}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.2,\yRefPosOne+1)
+  {\includegraphics[width=8cm]{photonEnergy_10GeV.pdf}};
+
+
+  
+  \node [Box] at (\xRefPosOne,\yRefPosOne-3) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Events with exactly one reconstructed PFO are used during calibration
+      \item Mean of energy distribution with only one reco PFO $\to$ 10 GeV
+
+    \end{itemize}
+  \end{minipage}
+};
+  
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Electron ID efficiency vs. Energy}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.2,\yRefPosOne+1)
+  {\includegraphics[width=9cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/test.pdf}};
+\node [Box] at (\xRefPosOne-1.2,\yRefPosOne+3.9) (box){%
+\myCenterBox{FCCee}
+}; 
+  
+  
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne+1)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/electronEfficiency_CLIC_CDR.png}};
+\node [Box] at (\xRefPosOne+4.7,\yRefPosOne+3) (box){%
+\myCenterBox{CLIC CDR}
+}; 
+  
+  \node [Box] at (\xRefPosOne,\yRefPosOne-3) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Merging photon clusters recover efficiency for high momentum electrons
+      \item CLIC results were obtained for electron with E$>$7.5 GeV (and angle matching)
+
+    \end{itemize}
+  \end{minipage}
+};
+  
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Electron $\Delta$Phi (signal PFO, second energetic PFO)}
+\renewcommand{\yRefPosOne}{1.5}
+\renewcommand{\xRefPosOne}{1.5}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/pg_0001.pdf}};
+
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4,\yRefPosOne)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/pg_0002.pdf}};
+  
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne+8,\yRefPosOne)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/pg_0003.pdf}};
+  
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne-3.5)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/pg_0004.pdf}};
+  
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4,\yRefPosOne-3.5)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/pg_0005.pdf}};
+  
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne+8,\yRefPosOne-3.5)
+  {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/oct11_2017/pg_0006.pdf}};
+  
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large PID efficiency vs. theta}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+  {\includegraphics[width=11cm]{../Sep27_2017/thetaEff.pdf}};
+
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne+3.7) (box){%
+\myCenterBox{$e$-}
+}; 
+  
+\node [Box] at (\xRefPosOne-2.7,\yRefPosOne-0.3) (box){%
+\myCenterBox{$K_L^0$}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+3.7) (box){%
+\myCenterBox{gamma}
+}; 
+
+\node [Box] at (\xRefPosOne+2.7,\yRefPosOne+-0.3) (box){%
+\myCenterBox{$\pi$-}
+}; 
+  
+% \node [Box] at (\xRefPosOne+1,\yRefPosOne-4) (box){%
+%   \begin{minipage}{\textwidth}
+%     \begin{itemize}
+%       \item ???
+%     \end{itemize}
+%   \end{minipage}
+% };
+
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+
+%*****************************************************************************
+\begin{frame}{\large \large Electron ID efficiency vs. Energy}
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{4.7}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne+0.7)
+  {\includegraphics[width=6.6cm]{detectorGeometry_v2.png}};
+ 
+  
+  
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne+1)
+  {\includegraphics[width=5cm]{eff_vs_theta.pdf}};
+
+  
+  \node [Box] at (\xRefPosOne,\yRefPosOne-3) (box){%
+  \begin{minipage}{\textwidth}
+    \begin{itemize}
+      \item Innefficiency due to splitting to two or more clusters in the transition region
+
+    \end{itemize}
+  \end{minipage}
+};
+  
+\end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+
+% %*****************************************************************************
+% \begin{frame}{\large \large Electron ID efficiency vs. Energy}
+% \renewcommand{\yRefPosOne}{-0.5}
+% \renewcommand{\xRefPosOne}{5.5}
+% \renewcommand{\xRefIncrementOne}{7.5}
+% \begin{tikzpicture}[overlay]
+% 
+%  \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1)
+%   {\includegraphics[width=6cm]{eff_vs_theta_2112.pdf}};
+% 
+%    \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1)
+%   {\includegraphics[width=6cm]{eff_vs_theta_22_2112.pdf}};
+% 
+%   
+%   \node [Box] at (\xRefPosOne,\yRefPosOne-3) (box){%
+%   \begin{minipage}{\textwidth}
+%     \begin{itemize}
+%       \item ???
+% 
+%     \end{itemize}
+%   \end{minipage}
+% };
+%   
+% \end{tikzpicture}
+% \end{frame}
+% %*****************************************************************************
+
+\end{document}
+
