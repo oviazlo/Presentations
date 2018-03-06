@@ -1,0 +1,71 @@
+InfoBegin
+InfoKey: ModDate
+InfoValue: D:20180119151817+01'00'
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20180119151817+01'00'
+InfoBegin
+InfoKey: Creator
+InfoValue: pdftk 2.02 - www.pdftk.com
+InfoBegin
+InfoKey: Producer
+InfoValue: itext-paulo-155 (itextpdf.sf.net-lowagie.com)
+PdfID0: b1bf5f8219fe3a918a6ca4424fb929b3
+PdfID1: 60dc27390f9b94f2a340decb27e408fe
+NumberOfPages: 4
+BookmarkBegin
+BookmarkTitle: Contents
+BookmarkLevel: 1
+BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: Page 1
+BookmarkLevel: 2
+BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: Contents
+BookmarkLevel: 1
+BookmarkPageNumber: 2
+BookmarkBegin
+BookmarkTitle: Page 1
+BookmarkLevel: 2
+BookmarkPageNumber: 2
+BookmarkBegin
+BookmarkTitle: Contents
+BookmarkLevel: 1
+BookmarkPageNumber: 3
+BookmarkBegin
+BookmarkTitle: Page 1
+BookmarkLevel: 2
+BookmarkPageNumber: 3
+BookmarkBegin
+BookmarkTitle: Contents
+BookmarkLevel: 1
+BookmarkPageNumber: 4
+BookmarkBegin
+BookmarkTitle: Page 1
+BookmarkLevel: 2
+BookmarkPageNumber: 4
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 90
+PageMediaRect: 0 0 595 842
+PageMediaDimensions: 595 842
+PageMediaCropRect: 20 255 499 822
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 90
+PageMediaRect: 0 0 595 842
+PageMediaDimensions: 595 842
+PageMediaCropRect: 20 255 499 822
+PageMediaBegin
+PageMediaNumber: 3
+PageMediaRotation: 90
+PageMediaRect: 0 0 595 842
+PageMediaDimensions: 595 842
+PageMediaCropRect: 20 255 499 822
+PageMediaBegin
+PageMediaNumber: 4
+PageMediaRotation: 90
+PageMediaRect: 0 0 595 842
+PageMediaDimensions: 595 842
+PageMediaCropRect: 20 255 499 822
