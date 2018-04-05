@@ -123,18 +123,17 @@ extendedchars=true}
 % poster advertisement
 
 
-\title[ Pandora PFA with CLIC and FCC-ee \hspace{13.5em}\insertframenumber/
-\inserttotalframenumber]{ Simulation studies of particle flow reconstruction for the CLIC and
-FCC-ee calorimetery }
+\title[ Pandora PFA FCC-ee \hspace{19.5em}\insertframenumber/
+\inserttotalframenumber]{FCC-ee calorimetery }
 
 
-	\author[Oleksandr Viazlo]{Oleksandr Viazlo, Matthias Weber \\ 
+	\author[Oleksandr Viazlo]{Oleksandr Viazlo\\ 
 % 	{\small ???}
 	}
 	\institute{\small CERN\\} 
 	
        
-	\date{9 March 2018}
+	\date{21 March 2018}
 
 % 	\logo{ \ifplacelogo \includegraphics[height=1.8cm]{./ID_week2/lund_uni-logo_s.pdf} \hspace{0.4cm} \fi}
 
@@ -145,382 +144,7 @@ FCC-ee calorimetery }
 
 \placelogofalse
 
-%*****************************************************************************
-\begin{frame}
-\frametitle{Introduction} 
 
-\renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-
-\begin{tikzpicture}[overlay]
-
-\node [myBox, anchor=north west] at (-0.5,3.3) (box){%
-    \begin{minipage}{0.45\textwidth}
-        \begin{itemize}
-         \item Compact Linear Collider ($e^-e^+$)
-         \item 3 energy stages: \\ 380  GeV, 1.5 TeV, 3 TeV
-         \item 156 ns long bunch trains with \\0.5 ns bunch separation;  \\
-          20 ms distance between trains
-        \end{itemize}
-    \end{minipage}
-};
-\node[fancytitle, right=15pt] at (box.north west) {CLIC};
-
-\node [myBox, anchor=north east] at (11.0,3) (box){%
-    \begin{minipage}{0.45\textwidth}
-        \begin{itemize}
-         \item Future Circular Collider ($e^-e^+$)
-         \item 4 energy stages: $Z$, $WW$, $HZ$, $t\bar{t}$
-         \item Bunch spacing: 20 - 8533 ns
-        \end{itemize}
-    \end{minipage}
-};
-\node[fancytitle, right=15pt] at (box.north west) {FCC-ee};
-
-% \node [myBox, anchor=north east] at (11.0,-1) (box){%
-\node [anchor=north east] at (11.5,0) (box){%
-    \begin{minipage}{0.5\textwidth}
-        \begin{itemize}
-         \item Both experiments demand state-of-the-art detectors with:
-         \begin{itemize}
-          \item low-material tracking system
-%           \item high-granularity calorimeters
-           \item precise calorimetery
-         \end{itemize}
-        \hspace{0.2cm} \\
-         \item CLICdet - proposed detector model \\ for CLIC with 4 Tesla magnetic field \\
-         \hspace{0.2cm} \\
-         \item CLD - detector model for FCC-ee derived from CLICdet and optimized for FCC-ee experimental conditions 
-        \end{itemize}
-    \end{minipage}
-};
-% \node[fancytitle, right=15pt] at (box.north west) {Search for $\PWprime$};
-
- 
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.35,\yRefPosOne-2.3)
-    {\includegraphics[width=6cm]{collider_comparison_june_2017.pdf}};
- 
-%% HELPER draw advanced helping grid with axises:
-% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
-
-\end{tikzpicture}
-\end{frame}
-%*****************************************************************************
-% %*****************************************************************************
-% \begin{frame}{}
-%     \begin{tikzpicture}[overlay]
-%     \node[right] (textNode) at (2.6,0) {
-%       {\large \bf CLD and CLICdet detector models}
-%     };
-%     \end{tikzpicture}
-% \end{frame}
-% %*****************************************************************************
-%*****************************************************************************
-\begin{frame}{\large \large CLD and CLICdet detector models}
-
-\renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-\begin{tikzpicture}[overlay]
-
- \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.15,\yRefPosOne-0.56)
-    {\includegraphics[width=7.8cm]{../CEPC_workshop/FCCeePictsFromKonrad/CLIC_FCC_Top_QuarterView_withLabes.png}};
-
-\node  at (\xRefPosOne,\yRefPosOne+2.8) (box){%
-\myCenterBox{\small CLD model}
-}; 
-    
-    \draw[black, thick, ->] (-0.8,-4.76)--(-0.8,3.7) node[pos=0.95, right]{\small R [m]};
-    \draw[black, thick, ->] (-0.8,-4.76)--(6.5,-4.76) node[pos=0.95, below]{\tiny Z [m]};
-    
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.05,\yRefPosOne-4.9)
-    {2.3};   
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.14,\yRefPosOne-4.9)
-    {3.7};  
-    
-%     \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-%   \begin{minipage}{0.43\textwidth}
-%     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-%   \end{minipage}
-% };
-
-\node  at (\xRefPosOne+3.5,\yRefPosOne-0.7) (box){%
-    \begin{minipage}{0.5\textwidth}
-
-  \begin{itemize}
-      \item 4 T magnetic field \\
-   {\color{red} 2 T magnetic field - CLD} \\ [0.3cm]
-   \item Full silicon VTX and Tracker:  
-   \begin{itemize}
-   
-    \item $\geqslant$12 hits per track 
-    \item r$_{inner} = 31$mm, r$_{outer} = 1.5$m   \\
-         {\color{red} r$_{inner} = 17$mm, r$_{outer} = 2.1$m - CLD}\\
-         {\color{red} \tiny increased material budget for 50$\%$ in VTX - CLD} \\[0.3cm]
-    
-   \end{itemize}
-
-   
-%    \\ \hspace{0.1cm}  r$_{inner} = 17$mm, r$_{outer} = 2.1$m \\ \hspace{0.1cm} $\geqslant$12 hits per track
-   \item W-Si ECAL 
-   \begin{itemize}
-    \item 40 layers, 22 X$_0$ \\[0.3cm]
-   \end{itemize}
-   \item Fe-Scint HCAL
-   \begin{itemize}
-    \item 60 layers, 7.0 $\lambda_I$ \\
-    {\color{red}  44 layers, 5.5 $\lambda_I$ - CLD}\\
-    [0.3cm] 
-   \end{itemize}
-%    Coil is outside of the calorimeter\\
-   \item Steel return yoke with 6 RPC muon chambers: 
-   \begin{itemize}
-    \item 2 m thickness \\
-    {\color{red}  1.5 m thickness - CLD}  \\[0.3cm]
-   \end{itemize}
-
-   
-   
-   \item CLICdet provides larger coverage of the forward region \\
-   {\color{red}   CLD - MDI (forward region): \\ $<$ 150 mrad, 
-   accommodates LumiCal }\\[0.3cm]
-  \end{itemize}
-
-    \end{minipage}
-};
-
-
-% \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-%   \begin{minipage}{0.43\textwidth}
-%     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-%   \end{minipage}
-% };
-
-%% HELPER draw advanced helping grid with axises:
-% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
-\end{tikzpicture}
-
- 
-\end{frame}
-%*****************************************************************************
-%*****************************************************************************
-\begin{frame}{\large \large CLD and CLICdet detector models}
-
-\renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-\begin{tikzpicture}[overlay]
-
- \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.15,\yRefPosOne-0.56)
-    {\includegraphics[width=7.8cm]{../CEPC_workshop/FCCeePictsFromKonrad/CLIC_FCC_Top_QuarterView_withLabes_withCLIC.png}};
-
-\node  at (\xRefPosOne,\yRefPosOne+2.8) (box){%
-\myCenterBox{\small CLD model}
-}; 
-
-\node  at (\xRefPosOne-3.5,\yRefPosOne-4.2) (box){%
-\myCenterBox{\small CLICdet}
-}; 
-    
-    \draw[black, thick, ->] (-0.8,-4.76)--(-0.8,3.7) node[pos=0.95, right]{\small R [m]};
-    \draw[black, thick, ->] (-0.8,-4.76)--(6.5,-4.76) node[pos=0.95, below]{\tiny Z [m]};
-    
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.05,\yRefPosOne-4.9)
-    {2.3};   
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.14,\yRefPosOne-4.9)
-    {3.7};  
-    
-%     \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-%   \begin{minipage}{0.43\textwidth}
-%     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-%   \end{minipage}
-% };
-
-\node  at (\xRefPosOne+3.5,\yRefPosOne-0.7) (box){%
-    \begin{minipage}{0.5\textwidth}
-
-  \begin{itemize}
-      \item 4 T magnetic field \\
-   {\color{red} 2 T magnetic field - CLD} \\ [0.3cm]
-   \item Full silicon VTX and Tracker:  
-   \begin{itemize}
-   
-    \item $\geqslant$12 hits per track 
-    \item r$_{inner} = 31$mm, r$_{outer} = 1.5$m   \\
-         {\color{red} r$_{inner} = 17$mm, r$_{outer} = 2.1$m - CLD}\\
-         {\color{red} \tiny increased material budget for 50$\%$ in VTX - CLD} \\[0.3cm]
-    
-   \end{itemize}
-
-   
-%    \\ \hspace{0.1cm}  r$_{inner} = 17$mm, r$_{outer} = 2.1$m \\ \hspace{0.1cm} $\geqslant$12 hits per track
-   \item W-Si ECAL 
-   \begin{itemize}
-    \item 40 layers, 22 X$_0$ \\[0.3cm]
-   \end{itemize}
-   \item Fe-Scint HCAL
-   \begin{itemize}
-    \item 60 layers, 7.0 $\lambda_I$ \\
-    {\color{red}  44 layers, 5.5 $\lambda_I$ - CLD}\\
-    [0.3cm] 
-   \end{itemize}
-%    Coil is outside of the calorimeter\\
-   \item Steel return yoke with 6 RPC muon chambers: 
-   \begin{itemize}
-    \item 2 m thickness \\
-    {\color{red}  1.5 m thickness - CLD}  \\[0.3cm]
-   \end{itemize}
-
-   
-   
-   \item CLICdet provides larger coverage of the forward region \\
-   {\color{red}   CLD - MDI (forward region): \\ $<$ 150 mrad, 
-   accommodates LumiCal }\\[0.3cm]
-  \end{itemize}
-
-    \end{minipage}
-};
-
-
-% \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-%   \begin{minipage}{0.43\textwidth}
-%     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-%   \end{minipage}
-% };
-
-%% HELPER draw advanced helping grid with axises:
-% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
-\end{tikzpicture}
-
- 
-\end{frame}
-%*****************************************************************************
-% %*****************************************************************************
-% \begin{frame}{\large \large CLD and CLICdet detector models}
-% 
-% \renewcommand{\yRefPosOne}{0}
-% \renewcommand{\xRefPosOne}{5.3}
-% \renewcommand{\xRefIncrementOne}{5.5}
-% \begin{tikzpicture}[overlay]
-% 
-% %  \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.15,\yRefPosOne-0.56)
-% %     {\includegraphics[width=7.8cm]{../CEPC_workshop/FCCeePictsFromKonrad/CLIC_FCC_Top_QuarterView_withLabes.png}};
-% % 
-% % \node  at (\xRefPosOne,\yRefPosOne+2.8) (box){%
-% % \myCenterBox{\small CLD model}
-% % }; 
-% %     
-% %     \draw[black, thick, ->] (-0.8,-4.76)--(-0.8,3.7) node[pos=0.95, right]{\small R [m]};
-% %     \draw[black, thick, ->] (-0.8,-4.76)--(6.5,-4.76) node[pos=0.95, below]{\tiny Z [m]};
-% %     
-% %   \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.05,\yRefPosOne-4.9)
-% %     {2.3};   
-% %   \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.14,\yRefPosOne-4.9)
-% %     {3.7};  
-%     
-% %     \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-% %   \begin{minipage}{0.43\textwidth}
-% %     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-% %   \end{minipage}
-% % };
-% 
-% \node  at (\xRefPosOne+3.5,\yRefPosOne-0.5) (box){%
-%     \begin{minipage}{0.5\textwidth}
-% 
-%   \begin{itemize}
-%       \item TODO [previous slide] - superimpose CLICdet tracker + ECAL and show for each detector direction of ECAL crack with angles written
-%       \item TODO Comparison of material udgets for tracker; explain that we need more material in CLD for coolings
-%       \item TODO Say about powerpulsing in CLIC and need for colling in VTX for CLD
-%   \end{itemize}
-% 
-%     \end{minipage}
-% };
-% 
-% 
-% % \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-% %   \begin{minipage}{0.43\textwidth}
-% %     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-% %   \end{minipage}
-% % };
-% 
-% %% HELPER draw advanced helping grid with axises:
-% % \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
-% \end{tikzpicture}
-% 
-%  
-% \end{frame}
-% %*****************************************************************************
-% %*****************************************************************************
-% \begin{frame}{}
-%     \begin{tikzpicture}[overlay]
-%     \node[right] (textNode) at (3.1,0) {
-%       {\large \bf Introduction to PandoraPFA}
-%     };
-%     \end{tikzpicture}
-% \end{frame}
-% %*****************************************************************************
-%*****************************************************************************
-\begin{frame}{\large \large Particle Flow Analysis: PandoraPFA}
-
-\renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-\begin{tikzpicture}[overlay]
-
-%  \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.15,\yRefPosOne-0.56)
-%     {\includegraphics[width=7.8cm]{../CEPC_workshop/FCCeePictsFromKonrad/CLIC_FCC_Top_QuarterView_withLabes.png}};
-% 
-% \node  at (\xRefPosOne,\yRefPosOne+2.8) (box){%
-% \myCenterBox{\small CLD model}
-% }; 
-%     
-%     \draw[black, thick, ->] (-0.8,-4.76)--(-0.8,3.7) node[pos=0.95, right]{\small R [m]};
-%     \draw[black, thick, ->] (-0.8,-4.76)--(6.5,-4.76) node[pos=0.95, below]{\tiny Z [m]};
-%     
-%   \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.05,\yRefPosOne-4.9)
-%     {2.3};   
-%   \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.14,\yRefPosOne-4.9)
-%     {3.7};  
-    
-%     \node [PixelBox] at (\xRefPosOne+3.7,\yRefPosOne-4) (box){%
-%   \begin{minipage}{0.43\textwidth}
-%     Detector design inspired by detectors for CLIC and ILC and optimized for FCC-ee conditions
-%   \end{minipage}
-% };
-
-\node  at (\xRefPosOne,\yRefPosOne+1) (box){%
-    \begin{minipage}{\textwidth}
-
-  \begin{itemize}
-      \item Particle identification at CLICdet and CLD is based on the 
-      particle ID algorithms used in PandoraPFA
-      \item Pandora aims at reconstructing and identifying each particle reaching the
-detector. The reconstructed particle types are $\mu\pm$, $e\pm$, $\gamma$, charged hadrons ($\pi\pm$) and neutral hadrons (n)
-      \item The main objective of Pandora algorithm: excellent jet
-energy resolution needed to achieve the desired precision involving
-hadronic final states\\[0.3cm]
-      \item Pandora is also used for identification of isolated single particles 
-%       \item Documentation???
-  \end{itemize}
-
-    \end{minipage}
-};
-
-
-\node [PixelBox] at (\xRefPosOne,\yRefPosOne-3) (box){%
-  \begin{minipage}{\textwidth}
-    In order to achieve the best resolution, Pandora uses most precise information associated with the particle: the energy of charged particles is measured by the tracking system, energy of neutral particles by the calorimeters
-  \end{minipage}
-};
-
-%% HELPER draw advanced helping grid with axises:
-% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
-\end{tikzpicture}
-
- 
-\end{frame}
-%*****************************************************************************
 %*****************************************************************************
 \begin{frame}{}
     \begin{tikzpicture}[overlay]
@@ -586,7 +210,7 @@ hadronic final states\\[0.3cm]
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
     {\includegraphics[width=6.2cm]{partEff/experimental_v1/calice_CLIC_vs_FCCee_effVsTheta_muons_E50.pdf}};
 
-\node  at (\xRefPosOne+4.1,\yRefPosOne+2.4) (box){%
+\node  at (\xRefPosOne+4.5,\yRefPosOne+3.6) (box){%
 \myCenterBox{\small 50 GeV muons}
 }; 
 
@@ -624,10 +248,10 @@ hadronic final states\\[0.3cm]
     {\includegraphics[width=6.2cm]{partEff/experimental_v1/calice_CLIC_vs_FCCee_effVsEnergy_pions.pdf}};
     
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
-    {\includegraphics[width=6.2cm]{partEff/experimental_v1/calice_CLIC_vs_FCCee_effVsTheta_pions_E20.pdf}};
+    {\includegraphics[width=6.2cm]{partEff/experimental_v1/calice_CLIC_vs_FCCee_effVsTheta_pions_E100.pdf}};
     
-    \node  at (\xRefPosOne+4.1,\yRefPosOne+2.4) (box){%
-    \myCenterBox{\small 20 GeV pions}
+    \node  at (\xRefPosOne+4.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 100 GeV pions}
     }; 
     \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.9,\yRefPosOne+3.6)
     {\tiny WORK IN PROGRESS};
@@ -969,141 +593,79 @@ due to an imperfect overlap between barrel and endcap calorimeters ({\small spac
   
 \end{frame}
 %*****************************************************************************
-
-
 %*****************************************************************************
 \begin{frame}{}
     \begin{tikzpicture}[overlay]
-    \node[right] (textNode) at (3.5,0) {
-      {\large \bf Software Compensation}
+    \node[right] (textNode) at (3.1,0) {
+      {\large \bf ECAL Endcap Geometry}
     };
     \end{tikzpicture}
 \end{frame}
 %*****************************************************************************
 %*****************************************************************************
-\begin{frame}{\large \large Software Compensation}
+\begin{frame}{\large \large CLD and CLICdet ECAL Geometry}
+
 \renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-
- \begin{tikzpicture}[overlay]
- 
-%   \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne+0.5)
-%     {\includegraphics[width=8cm]{Matthias/ClosurePlotOfHighEnergyRangeNeutrons.pdf}};
-
- \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne-1)
-    {\includegraphics[width=4cm]{other/swComp_weights_example.png}};
- 
- 
- 
- \node  at (\xRefPosOne-2.7,\yRefPosOne-1) (box){%
-    \begin{minipage}{0.6\textwidth}
-    Software compensation:
-  \begin{itemize}
-   \item Electromagnetic component of shower typically denser
-   \item Software compensation reweights hits in HCAL depending on the hit energy
-density
-   \item In total 9 different parameters are used
-   \item Weight includes an energy dependence
-   
-  \end{itemize}
-    \end{minipage}
-};
-
-\node  at (\xRefPosOne-0.5,\yRefPosOne+2) (box){%
-    \begin{minipage}{\textwidth}
-%     Nonlinear non compensating natures of hadron calorimeters:
-  \begin{itemize}
-    \item Software compensation is an energy ``regularisation'' techniques
-   \item Idea to correct with software for (on average) larger response of hadron
-showers with large electromagnetic component $\to$ improves energy
-measurement of cluster energies
-   \item Software compensation technique (developed by CALICE) is implemented in
-PandoraPFA now
-  \end{itemize}
-    \end{minipage}
-};
-
-\node [PixelBox] at (\xRefPosOne,\yRefPosOne-4) (box){%
-  \begin{minipage}{\textwidth}
-  Default weight tuned for ILD experiment at ILC up to 100 GeV, at CLIC expect to
-reach higher hadron energies, at 3 TeV sometimes beyond 500 GeV
-$\to$ retune parameters for CLIC ({\small Follow description of paper EPJC 77 (2017) 698})
-  \end{minipage}
-};
-
-
-
-
-
-\end{tikzpicture}
- 
-\end{frame}
-%*****************************************************************************
-%*****************************************************************************
-\begin{frame}{\large \large Software Compensation at CLIC}
-\renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-
- \begin{tikzpicture}[overlay]
- 
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne+0.5)
-    {\includegraphics[width=8cm]{Matthias/ClosurePlotOfHighEnergyRangeNeutrons.pdf}};
-
- 
- \node  at (\xRefPosOne,\yRefPosOne-3.5) (box){%
-    \begin{minipage}{\textwidth}
-
-  \begin{itemize}
-%    \item Software compensation weights derived from MC using neutron and $K_L^0$ events
-  \item Software compensation weights derived using several fully simulated neutron and K0L single particle datasets
-   \item Mean and resolution after software compensation largely improved
-   \item Software compensation corrects for nonlinear response of hadrons on the fly
-  \end{itemize}
-
-    \end{minipage}
-};
-
-\end{tikzpicture}
- 
-\end{frame}
-%*****************************************************************************
-%*****************************************************************************
-\begin{frame}{\large \large Jet energy resolution at CLIC with dijet events}
-
-\renewcommand{\yRefPosOne}{-0.5}
 \renewcommand{\xRefPosOne}{5.3}
 \renewcommand{\xRefIncrementOne}{5.5}
 \begin{tikzpicture}[overlay]
 
- \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1.2)
-    {\includegraphics[width=5.5cm]{Matthias/Zuds200_RMS90_vs_cosTheta_Quark_100GeV_Jets_noSWC_ILDWeights_CLICWeights.pdf}};
-    
- \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
-    {\includegraphics[width=5.5cm]{Matthias/Zuds1500_RMS90_vs_cosTheta_Quark_750GeV_Jets_noSWC_ILDWeights_CLICWeights.pdf}};
-    
-%  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.6,\yRefPosOne+0.1)
-%     {\tiny WORK IN PROGRESS};
-%  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne-0.1)
-%     {\tiny WORK IN PROGRESS};
-    
-\node  at (\xRefPosOne-3.2,\yRefPosOne+2.8) (box){%
-\myCenterBox{\small 100 GeV jets}
+%  \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.15,\yRefPosOne-0.56)
+%     {\includegraphics[width=7.8cm]{../CEPC_workshop/FCCeePictsFromKonrad/CLIC_FCC_Top_QuarterView_withLabes_withCLIC.png}};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne-0.56)
+    {\includegraphics[width=8.5cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/CLIC_FCC_ECAL.png}};
+
+
+\node  at (\xRefPosOne+0.6,\yRefPosOne+1.3) (box){%
+\myCenterBox{\small CLD model}
 }; 
 
-\node  at (\xRefPosOne+3.05,\yRefPosOne+2.8) (box){%
-\myCenterBox{\small 750 GeV jets}
+\node  at (\xRefPosOne+0.6,\yRefPosOne-4.2) (box){%
+\myCenterBox{\small CLICdet}
 }; 
+    
+%     \draw[black, thick, ->] (-0.8,-4.76)--(-0.8,3.7) node[pos=0.95, right]{\small R [m]};
+%     \draw[black, thick, ->] (-0.8,-4.76)--(6.5,-4.76) node[pos=0.95, below]{\tiny Z [m]};
+%     
+%   \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.05,\yRefPosOne-4.9)
+%     {2.3};   
+%   \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.14,\yRefPosOne-4.9)
+%     {3.7};  
+
+%% HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+
+ 
+\end{frame}
+%*****************************************************************************
+%*****************************************************************************
+\begin{frame}{\large \large ECAL material budget}
+
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{5.5}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1.2)
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/materialBudget_fccee_vs_clic.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/materialBudget.pdf}};
+
+% \node  at (\xRefPosOne+4.1,\yRefPosOne+2.4) (box){%
+% \myCenterBox{\small 50 GeV muons}
+% }; 
 
 
 
 \node  at (\xRefPosOne,\yRefPosOne-2.8) (box){%
 \begin{minipage}{\textwidth}
   \begin{itemize}
-   \item applying software compensation always improves jet energy resolution
-   \item comparable performance of CLIC tuned weight at low jet energies (left plot)
-   \item significant improvement at high jet energies (right plot)
+   \item crack in ECAL transition region - the main reason for photon inefficiency
+   \item extend ECAL endcap in the same way as done in CLIC
+   \item extend the outer radius of ECAL endcap: 2350 mm $\to$ 2455 mm
   \end{itemize}
 \end{minipage}
 };
@@ -1116,39 +678,33 @@ $\to$ retune parameters for CLIC ({\small Follow description of paper EPJC 77 (2
 \end{frame}
 %*****************************************************************************
 %*****************************************************************************
-\begin{frame}{\large \large Jet energy resolution at CLIC with dijet events}
+\begin{frame}{\large \large Photon and Electron efficiencies}
 
 \renewcommand{\yRefPosOne}{-0.5}
-\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefPosOne}{5.5}
 \renewcommand{\xRefIncrementOne}{5.5}
 \begin{tikzpicture}[overlay]
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1.2)
-    {\includegraphics[width=5.5cm]{Matthias/JER_Summary_ILD_Red.pdf}};
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/photon_eff_vs_theta_E100.pdf}};
     
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
-    {\includegraphics[width=5.5cm]{Matthias/JER_Summary_CLIC_n_K0L_Red.pdf}};
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/extendedEcalEndcap_effVsTheta_electrons_E50_fcceeComp.pdf}};
 
-\node  at (\xRefPosOne-1.7,\yRefPosOne+3.2) (box){%
-\myCenterBox{\small default weights}
-}; 
+  \node  at (\xRefPosOne-1.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 100 GeV photons}
+    }; 
+    
+  \node  at (\xRefPosOne+4.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 50 GeV electrons}
+    }; 
 
-\node  at (\xRefPosOne+4.45,\yRefPosOne+3.2) (box){%
-\myCenterBox{\small CLIC weights}
-}; 
 
- \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.79,\yRefPosOne+3.42)
-    {\includegraphics[width=2.0cm]{Matthias/clicdp_work_in_progress.pdf}};
-
- \node[inner sep=0pt] (tmp) at (\xRefPosOne+2.21,\yRefPosOne+3.42)
-    {\includegraphics[width=2.0cm]{Matthias/clicdp_work_in_progress.pdf}};
 
 \node  at (\xRefPosOne,\yRefPosOne-2.8) (box){%
 \begin{minipage}{\textwidth}
   \begin{itemize}
-   \item Comparable performance for jets up to 190 GeV
-   \item Improvement of jet energy resolutions by around 10$\%$ for larger jet energies 
-   \item Achieve jet energy resolution between 3.1 $\%$ and 4.5 $\%$ with CLIC tuned weights 
+   \item extension of ECAL endcap recover photon inefficiency in transition region
   \end{itemize}
 \end{minipage}
 };
@@ -1161,50 +717,108 @@ $\to$ retune parameters for CLIC ({\small Follow description of paper EPJC 77 (2
 \end{frame}
 %*****************************************************************************
 %*****************************************************************************
-\begin{frame}{\large \large Summary}
- 
- \renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
-\renewcommand{\xRefIncrementOne}{5.5}
-\begin{tikzpicture}[overlay]
-
-       
-\node  at (\xRefPosOne,\yRefPosOne+2) (box){%
-  \begin{minipage}{0.99\textwidth}
-  Performance of Pandora PFA has been studied with isolated single particles and dijet event for CLICdet and CLD detectors
- \begin{itemize}
-  
-  \item Pandora provides good single particle ID efficiency for both detectors
-  \item Photon conversion and electron Bremsstrahlung can be addressed by cluster merging and tuning of the track-cluster distance requirement 
-    \end{itemize}
-  \end{minipage}
-};
-
-\node at (\xRefPosOne,\yRefPosOne-2) (box){%
-  \begin{minipage}{0.99\textwidth}
-  CLIC specific software compensation parameters have been determined
- \begin{itemize}
-  \item Comparable jet energy resolution for low energetic jets ($<$250 GeV)
-  \item Jet resolutions improved by around 10 $\%$ for high energetic jets ($>$250 GeV)
-when using previous default parameters
-\item Confusion term reduced by more accurate cluster
-energy estimation
-    \end{itemize}
-  \end{minipage}
-};
-
-\node[right] (textNode) at (3,-4) {
-      { \large \bf Thank you for your attention! }
+\begin{frame}{}
+    \begin{tikzpicture}[overlay]
+    \node[right] (textNode) at (3.1,0) {
+      {\large \bf Jet Energy Resolution}
     };
+    \end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+%*****************************************************************************
+\begin{frame}{\large \large Jet Energy Resolution}
 
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{5.5}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1.2)
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/CLICbyMatthias_vs_FCCee_Zuds91.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/CLICbyMatthias_vs_FCCee_Zuds380.pdf}};
+
+  \node  at (\xRefPosOne-1.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 45 GeV Jets}
+    }; 
+    
+  \node  at (\xRefPosOne+4.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 190 GeV Jets}
+    }; 
+
+
+
+\node  at (\xRefPosOne,\yRefPosOne-2.5) (box){%
+\begin{minipage}{\textwidth}
+Energy ``Regularisation'' Techniques in Pandora:
+  \begin{itemize}
+   \item \textbf{MaxHCalHitHadronicEnergy} - 
+        Truncates high cell energy to certain threshold
+    \item \textbf{SoftwareCompensation} - Adjusts neutral hadron energies based on energy density of calorimeter hits and energy of the cluster the hit belongs to.
+  \end{itemize}
+\end{minipage}
+};
+
+\node  at (\xRefPosOne,\yRefPosOne-3.8) (box){%
+\begin{minipage}{\textwidth}
+  \begin{itemize}
+   \item Try SoftwareCompensation with FCCee
+  \end{itemize}
+\end{minipage}
+};
+
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
 \end{tikzpicture}
-  
+ 
 \end{frame}
 %*****************************************************************************
 \backupbegin
 %*****************************************************************************
 \begin{frame}
 \frametitle{BACKUP} 
+ 
+\end{frame}
+%*****************************************************************************
+%*****************************************************************************
+\begin{frame}{\large \large Jet Energy Resolution}
+
+\renewcommand{\yRefPosOne}{-0.5}
+\renewcommand{\xRefPosOne}{5.5}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-3,\yRefPosOne+1.2)
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/CLICbyMatthias_vs_FCCee_Zuds91.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3,\yRefPosOne+1.25)
+    {\includegraphics[width=6.2cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_mar14_1018/CLICbyMatthias_vs_FCCee_Zuds91_extendedEcalEndcap.pdf}};
+
+  \node  at (\xRefPosOne-1.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 45 GeV Jets}
+    }; 
+    
+  \node  at (\xRefPosOne+4.5,\yRefPosOne+3.6) (box){%
+    \myCenterBox{\small 190 GeV Jets}
+    }; 
+
+
+
+\node  at (\xRefPosOne,\yRefPosOne-2.8) (box){%
+\begin{minipage}{\textwidth}
+  \begin{itemize}
+   \item transition region: bin 0.6 $< cos(\theta) <$ 0.7
+   \item extension of ECAL endcap slightly improves resolution in transition region but still is worse than  CLIC
+  \end{itemize}
+\end{minipage}
+};
+
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
  
 \end{frame}
 %*****************************************************************************
