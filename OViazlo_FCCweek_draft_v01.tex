@@ -61,7 +61,7 @@ extendedchars=true}
 \newcommand{\yRefIncrementTwo}{0.0}
 \newcommand{\xRefIncrementTwo}{0.0}
 
-\graphicspath{ {/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_CALICE_workshop/} }
+\graphicspath{ {/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/plots_FCCweek_workshop/} }
 
 
 \DeclareGraphicsExtensions{.eps, .pdf, .png}
@@ -175,7 +175,7 @@ extendedchars=true}
 \begin{frame}{\large \large CLD detector model}
 
 \renewcommand{\yRefPosOne}{0}
-\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefPosOne}{5.5}
 \renewcommand{\xRefIncrementOne}{5.5}
 \begin{tikzpicture}[overlay]
 
@@ -186,8 +186,14 @@ extendedchars=true}
 \myCenterBox{\small CLD model}
 }; 
     
-    \draw[black, thick, ->] (-0.8,-4.76)--(-0.8,3.7) node[pos=0.95, right]{\small R [m]};
-    \draw[black, thick, ->] (-0.8,-4.76)--(6.5,-4.76) node[pos=0.95, below]{\tiny Z [m]};
+    \draw[black, thick, ->] (-0.58,-4.76)--(-0.58,3.7) node[pos=0.95, right]{\small R [m]};
+    \draw[black, thick, ->] (-0.58,-4.76)--(6.7,-4.76) node[pos=0.95, below]{\tiny Z [m]};
+
+   \node[inner sep=0pt] (tmp) at (\xRefPosOne-6.28,\yRefPosOne-1.95)
+    {2.1};   
+
+  \node[inner sep=0pt] (tmp) at (\xRefPosOne-6.29,\yRefPosOne-0.05)
+    {3.5};   
     
   \node[inner sep=0pt] (tmp) at (\xRefPosOne-3.05,\yRefPosOne-4.9)
     {2.3};   
@@ -210,10 +216,10 @@ extendedchars=true}
     \begin{minipage}{0.5\textwidth}
 
   \begin{itemize}
-      \item Full silicon tracking system - provides $\geqslant$12 hits per track 
-      \item 2 T magnetic field (constrains from the machine) $\to$ 2.1 m large tracker radius \\[0.4cm]
+      \item Full silicon tracking system - provides $\geqslant$12 hits per track \\[0.4cm]
+%       \item 2 T magnetic field (constraints from the machine) $\to$ 2.1 m large tracker radius \\[0.4cm]
       \item Fine-grained ECAL and HCAL optimised for particle flow reconstruction \\[0.4cm]
-      \item Superconducting solenoid is outside of calorimeter \\[0.4cm]
+      \item Superconducting solenoid is outside of the calorimeter \\[0.4cm]
       \item Steel return yoke with muon chambers\\[0.4cm]
    
    \item Forward detector region ($<$ 150 mrad) is reserved for Machine-Detector Interface (accommodates LumiCal)
@@ -256,10 +262,10 @@ extendedchars=true}
 
   \begin{minipage}{0.46\textwidth}
     \begin{itemize}
-     \item Silicon pixels: 25x25$\upmu$m
+     \item Silicon pixels: 25x25$\upmu$m$^2$
      \item Single-point resolution: 3 $\upmu$m
-     \item 3 double layers in barrel: \\17-57 mm
-     \item 3 double endcap disks per side: 160 - 300 mm
+     \item 3 double layers in barrel: \\r = 17, 37, 57 mm
+     \item 3 double endcap disks per side: \\ z = 160, 230, 300 mm
      \item Material budget: 0.3$\%$ X$_0$ per layer
     \end{itemize}
 
@@ -302,7 +308,7 @@ extendedchars=true}
 % \node[PixelBox, inner sep=2pt] (tmp) at  (\xRefPosOne+2,\yRefPosOne+1.3) (box){%
 \node[inner sep=0pt] (tmp) at  (\xRefPosOne+2.8,\yRefPosOne-3.1) (box){%
 % \node[inner sep=0pt] (tmp) at  (\xRefPosOne+2.5,\yRefPosOne+1.3) (box){%
-    {\includegraphics[width=5cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/Sasha_17Jan2018_materialBudget_FCCee_o1_v02.pdf}}
+    {\includegraphics[width=5cm]{other/Sasha_17Jan2018_materialBudget_FCCee_o1_v02.pdf}}
 };
 % \node[fancytitle, right=5pt] at (box.north west) {VTX + Tracker + Beampipe Material Budget};
     
@@ -314,7 +320,7 @@ extendedchars=true}
     
 \node[inner sep=0pt] (tmp) at  (\xRefPosOne+3.0,\yRefPosOne+1.3) (box){%
 % \node[inner sep=0pt] (tmp) at  (\xRefPosOne+2.8,\yRefPosOne-2.6) (box){%
-    {\includegraphics[width=5cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/full_Tracker_FCCee_probe_v2.pdf}}
+    {\includegraphics[width=5cm]{other/full_Tracker_FCCee_probe_v2.pdf}}
 };
 
 % \node[TRTBox] (tmp.west) at  (\xRefPosOne-3.2,\yRefPosOne-2.3) (box){%
@@ -358,18 +364,18 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
 \node[inner sep=0pt] (tmp) at  (\xRefPosOne+2.5,\yRefPosOne-3.2) (box){%
-    {\includegraphics[width=4.5cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures//Sasha_15Mar2018_nuclearInteractionLengthsCalorimeter_FCCee_o1_v02.pdf}}
+    {\includegraphics[width=4.5cm]{other/Sasha_15Mar2018_nuclearInteractionLengthsCalorimeter_FCCee_o1_v02.pdf}}
 };
 
 \node[inner sep=0pt] (tmp) at  (\xRefPosOne+3.7,\yRefPosOne+0.5) (box){%
-    {\includegraphics[width=5.5cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/calo_overall_view.pdf}}
+    {\includegraphics[width=5.5cm]{other/calo_overall_view.pdf}}
 };
 
 
 
 
 \node[TRTBox, inner sep=7pt] (tmp) at  (\xRefPosOne-3.1,\yRefPosOne-3.8) (box){%
-    {\includegraphics[width=5.5cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/HCAL_schematicDrawning.pdf}}
+    {\includegraphics[width=5.5cm]{other/HCAL_schematicDrawning.pdf}}
 };
 \node[fancytitle, right=15pt] at (box.north west) {HCAL layer layout};
 
@@ -378,9 +384,9 @@ extendedchars=true}
   \begin{minipage}{0.48\textwidth}
     \begin{itemize}
         \item Si-W sampling calorimeter
-        \item cell size 5 x 5 mm$^2$
+        \item cell size 5x5 mm$^2$
         \item 40 layers (1.9 mm thick W plates)
-        \item Depth: 22 X$_0$
+        \item Depth: 22 X$_0$, 1 $\lambda_I$, 20 cm
     \end{itemize}
 
   \end{minipage}
@@ -392,9 +398,9 @@ extendedchars=true}
   \begin{minipage}{0.48\textwidth}
     \begin{itemize}
         \item Scintillator-steel sampling calorimeter
-        \item cell size 30 x 30 mm$^2$
+        \item cell size 30x30 mm$^2$
         \item 44 layers (19 mm thick steel plates)
-        \item Depth: 5.5 $\lambda_I$
+        \item Depth: 5.5 $\lambda_I$, 117 cm
     \end{itemize}
 
   \end{minipage}
@@ -422,7 +428,7 @@ extendedchars=true}
 
   \begin{minipage}{0.43\textwidth}
       \begin{itemize}
-     \item 2T superconducting coil outside calorimeter: 
+     \item 2 T superconducting coil outside calorimeter: 
       \begin{itemize}
        \item 90 mm aluminium thick coil
       \end{itemize}
@@ -454,7 +460,7 @@ extendedchars=true}
 
     
 \node[inner sep=0pt] (tmp) at  (\xRefPosOne+2.8,\yRefPosOne-0.6) (box){%
-    {\includegraphics[width=7cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/FCC_clic_muons.pdf}}
+    {\includegraphics[width=7cm]{other/FCC_clic_muons.pdf}}
 };
 
 
@@ -559,10 +565,10 @@ extendedchars=true}
 
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{../plots_FCCweek_workshop/fromEmilia/MomRes_vs_p.pdf}};
+  {\includegraphics[width=6cm]{fromEmilia/MomRes_vs_theta.pdf}};
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{../plots_FCCweek_workshop/fromEmilia/d0Res_vs_theta.pdf}};
+  {\includegraphics[width=6cm]{fromEmilia/d0Res_vs_theta.pdf}};
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-0.2,\yRefPosOne+3.2)
   {\tiny WORK IN PROGRESS};
@@ -604,10 +610,10 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{../plots_FCCweek_workshop/fromEmilia/eff_vs_pT.pdf}};
+  {\includegraphics[width=6cm]{fromEmilia/eff_vs_pT.pdf}};
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{../plots_FCCweek_workshop/fromEmilia/eff_vs_theta.pdf}};
+  {\includegraphics[width=6cm]{fromEmilia/eff_vs_theta.pdf}};
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-0.2,\yRefPosOne+3.2)
   {\tiny WORK IN PROGRESS};
@@ -643,10 +649,10 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{../plots_FCCweek_workshop/fromEmilia/eff_vs_pt_91.pdf}};
+  {\includegraphics[width=6cm]{fromEmilia/eff_vs_pt_91.pdf}};
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{../plots_FCCweek_workshop/fromEmilia/eff_vs_pt_380.pdf}};
+  {\includegraphics[width=6cm]{fromEmilia/eff_vs_pt_380.pdf}};
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-0.2,\yRefPosOne+3.2)
   {\tiny WORK IN PROGRESS};
@@ -657,7 +663,7 @@ extendedchars=true}
     \begin{minipage}{1.1\textwidth}
       \begin{itemize}
 		\item Efficiency = fraction of pure reconstructed particles out of the reconstructable MC particles
-		\item Pure reconstructed particles: 75$\%$ of hits from track are associated to the simulated MC particle
+		\item Pure reconstructed particles: $\geqslant$75$\%$ of hits from track are associated to the simulated MC particle
       \end{itemize}
     \end{minipage}
   };
@@ -717,17 +723,17 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne-0.6)
-  {\includegraphics[width=6cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/CLD_muon_eff.pdf}};
+  {\includegraphics[width=6cm]{singleParticleEff/CLD_muon_eff.pdf}};
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne-0.6)
-  {\includegraphics[width=6cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/CLD_pion_eff.pdf}};
+  {\includegraphics[width=6cm]{singleParticleEff/CLD_pion_eff.pdf}};
 
 
  \node  at (\xRefPosOne+1,\yRefPosOne+3.3) (box){%
     \begin{minipage}{1.1\textwidth}
   \begin{itemize}
 
-   \item Efficiency = fraction or matched reconstructed particles out of the simulated MC particles:
+   \item Efficiency = fraction of matched reconstructed particles out of the simulated MC particles:
       \begin{itemize}
        \item reconstructed particle of the same type as simulated MC particle
        \item angular matching: $\Delta\theta <$ 1 mrad and $\Delta\phi <$ 2 mrad
@@ -774,10 +780,10 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne-0.6)
-  {\includegraphics[width=6cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/calice_photonEff_vs_energy_reclustering_FCCee.pdf}};
+  {\includegraphics[width=6cm]{singleParticleEff/calice_photonEff_vs_energy_reclustering_FCCee.pdf}};
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne-0.6)
-  {\includegraphics[width=6cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/tempPlots/CLD_electron_eff.pdf}};
+  {\includegraphics[width=6cm]{singleParticleEff/CLD_electron_eff.pdf}};
 
 
  \node  at (\xRefPosOne+1,\yRefPosOne+2.9) (box){%
@@ -785,7 +791,7 @@ extendedchars=true}
   \begin{itemize}
 
    \item Photon merging procedure is used to recover inefficiency due to photon conversion
-   \item Pandora parameters were retuned in order to recover some electron inefficiency due to Bremsstrahlung
+   \item Pandora parameters were retuned in order to recover some electron inefficiency due to Bremsstrahlung (no energy matching criteria applied)
     \end{itemize}
     \end{minipage}
   };
@@ -794,7 +800,8 @@ extendedchars=true}
  \node  at (\xRefPosOne+1,\yRefPosOne-3.5) (box){%
     \begin{minipage}{\textwidth}
       \begin{itemize}
-        \item $>95\%$ photons and electron efficiency {\tiny [TODO electron plot has to be updated]}
+        \item $>95\%$ photons and electron efficiency 
+%         {\tiny [TODO electron plot has to be updated]}
       \end{itemize}
     \end{minipage}
   };
@@ -824,11 +831,14 @@ extendedchars=true}
 \begin{tikzpicture}[overlay]
 
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-1.7,\yRefPosOne+0.9)
-  {\includegraphics[width=6cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/Sasha_17Jan2018_jet_energy_res.pdf}};
+%   {\includegraphics[width=6cm]{/home/oviazlo/Work/Note_FCCeeDetector/figures/Sasha_17Jan2018_jet_energy_res.pdf}};
+  {\includegraphics[width=6cm]{JER/jet_energy_res_conformal_apr6.pdf}};
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne+0.9)
 %   {\includegraphics[width=6cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/CEPC_workshop/../oct11_2017/jet_energy.pdf}};
-{\includegraphics[width=6cm]{FCCweek/jet_energy.pdf}};
+% {\includegraphics[width=6cm]{FCCweek/jet_energy.pdf}};
+{\includegraphics[width=6cm]{JER/jet_energy_conformal_apr6.pdf}};
+
   
  \node[inner sep=0pt] (tmp) at (\xRefPosOne-0.1,\yRefPosOne+3.2)
   {\tiny WORK IN PROGRESS};
@@ -849,11 +859,11 @@ extendedchars=true}
 %   {\includegraphics[width=4cm]{/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/CEPC_workshop/../oct11_2017/jetRes_formula.png}
 %   };
 %  
-  \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne-3.7)
-  {\myCenterBox[yellow]{\href{http://arxiv.org/abs/1209.4039}{arXiv:1209.4039}}  };
+%   \node[inner sep=0pt] (tmp) at (\xRefPosOne+4.5,\yRefPosOne-3.7)
+%   {\myCenterBox[yellow]{\href{http://arxiv.org/abs/1209.4039}{arXiv:1209.4039}}  };
  
  
-  \node [PixelBox, inner sep=4pt]  at (\xRefPosOne+4.7,\yRefPosOne-2.5) (box){%
+  \node [PixelBox, inner sep=4pt]  at (\xRefPosOne+4.7,\yRefPosOne-2.9) (box){%
     \begin{minipage}{0.45\textwidth}
     \small
 		Jet energy (E$_j$) is measured as a half of total energy (E$_{jj}$) of Z$\to$uds di-jet event\\
@@ -870,15 +880,15 @@ extendedchars=true}
       \begin{itemize}
 		\item Jet energy resolution in barrel region:
         \begin{itemize}
-            \item 45.5 GeV jets: 4-5 $\%$
+            \item 45.5 GeV jets: 4-4.5 $\%$
             \item 190 GeV jets: 3-4 $\%$ \\ [0.2cm]
         \end{itemize}
         \item Total energy is reconstructed with 1$\%$ accuracy:
         \begin{itemize}
-            \item 91 GeV: \hspace{0.07cm} 90.4 GeV
-            \item 380 GeV: 376.4 GeV
+            \item 91 GeV: \hspace{0.07cm} 90.2 GeV
+            \item 380 GeV: 377.0 GeV
         \end{itemize}
-        \item comparable resolution with the CLIC detector 
+%         \item comparable resolution with the CLIC detector 
 
       \end{itemize}
     \end{minipage}
@@ -911,9 +921,11 @@ extendedchars=true}
   \begin{minipage}{0.99\textwidth}
   
 \begin{itemize}
- \item Further detector performance simulation studies, overlap of incoherent pairs (in progress) and synchrotron radiation backgounds
+ \item Further detector performance simulation studies
  \begin{itemize}
-  \item If needed optimize timing and/or pT cuts to mitigate impact of background\\[0.3cm]
+ \item flavour tagging performance
+ \item overlay of incoherent pairs (in progress) and synchrotron radiation backgrounds\\[0.3cm]
+%   \item If needed optimize timing and/or p$_T$ cuts to mitigate impact of background\\[0.3cm]
  \end{itemize}
  \item Full simulation studies of different physics processes 
  \begin{itemize}
@@ -922,7 +934,7 @@ extendedchars=true}
  \item Engineering studies
  \begin{itemize}
   \item cooling studies of all subdetectors (no power pulsing)
-  \item ECAL optimisation (number of layers, technology choices)
+  \item ECAL optimisation (technology choices, number of layers)
   \item detector opening / maintenance scenarios, impact for detector layout 
  \end{itemize}
 
