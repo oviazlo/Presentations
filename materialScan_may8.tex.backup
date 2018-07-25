@@ -1,0 +1,337 @@
+\documentclass[8pt]{beamer}
+\setbeamerfont{institute}{size=\small}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+
+\usetheme{Warsaw}
+\usecolortheme{rose}
+\usepackage{multicol}
+\usepackage{epstopdf}
+\usepackage{textcomp}
+\usepackage{adjustbox}
+\usepackage[italic]{hepnames}
+\usepackage{bbding} % for special charachters e.g. for itemize (ftp://ftp.dante.de/tex-archive/fonts/bbding/bbding.pdf)
+\usepackage{xcolor}
+\usepackage{pdfpages}
+
+% remove navigation buttons
+% \beamertemplatenavigationsymbolsempty
+
+% TikZ includes!!!
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usetikzlibrary{backgrounds}
+\tikzstyle{every picture}+=[remember picture]
+\input{../latexHelpScripts/tikzGrid.tex}
+
+\newcommand{\myCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+  }
+}
+
+\newcommand{\mySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\small #2}}
+    }\par
+  }
+}
+
+\newcommand{\myVerySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\scriptsize #2}}
+    }\par
+  }
+}
+
+\newcommand{\myBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+}
+
+\newcommand{\mySmallBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{{\small #2}}
+    }\par
+}
+
+\newcommand{\myVerySmallBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{{\scriptsize #2}}
+    }\par
+}
+
+% do not use backup slides in page counter
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+% custom colors
+\definecolor{olive}{rgb}{0.3, 0.4, .1}
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\definecolor{title}{RGB}{255,0,90}
+\definecolor{dgreen}{rgb}{0.,0.6,0.}
+\definecolor{gold}{rgb}{1.,0.84,0.}
+\definecolor{JungleGreen}{cmyk}{0.99,0,0.52,0}
+\definecolor{BlueGreen}{cmyk}{0.85,0,0.33,0}
+\definecolor{RawSienna}{cmyk}{0,0.72,1,0.45}
+\definecolor{Magenta}{cmyk}{0,1,0,0}
+
+\begin{document}
+% custom commands for positioning of plots
+\newcommand{\yRefPosOne}{0.0}
+\newcommand{\xRefPosOne}{0.0}
+\newcommand{\yRefPosTwo}{0.0}
+\newcommand{\xRefPosTwo}{0.0}
+\newcommand{\yRefIncrementOne}{0.0}
+\newcommand{\xRefIncrementOne}{0.0}
+\newcommand{\yRefIncrementTwo}{0.0}
+\newcommand{\xRefIncrementTwo}{0.0}
+
+\DeclareGraphicsExtensions{{.pdf},{.png}}
+\graphicspath{{./pictures//}}
+
+
+
+\title[FCCee tracking performance \hspace{17em}\insertframenumber/
+\inserttotalframenumber]{FCCee tracking performance study}
+
+
+	\author{Oleksandr Viazlo}
+	\institute{FCCee MDI study group meeting}
+	\date{10.05.17\\}
+% 	\logo{ \ifplacelogo \includegraphics[height=1.8cm]{./pictures/lund_uni-logo_s.pdf} \hspace{0.4cm} \fi}
+  	\frame{\titlepage}
+
+\placelogofalse
+
+\newcommand{\channel}{enuqqbb}
+\newcommand{\goodChannel}{$t\bar{t} \longrightarrow W^{+}bW^{-}\bar{b} \longrightarrow q\bar{q}be^{-}\bar{\nu_{e}}\bar{b} + e^{+}\nu_{e}bq\bar{q}\bar{b}$}
+\newcommand{\myNodeOne}{\tikz[baseline,inner sep=1pt] \node[anchor=base]}
+\newcommand{\myNodeTwo}{\tikz[baseline,inner sep=1pt] \node[anchor=base]}
+
+% For nice block (provided by Oleh)
+\tikzstyle{mybox} = [draw=red, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{fancytitle} =[fill=white!15, text=black]
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{FCCee detector model} 
+
+\begin{tikzpicture}[overlay]
+
+%% HELPER draw advanced helping grid with axises:
+% \draw(0,-4) to[grid with coordinates] (11.5,4);
+
+% \draw[red,thick] (6.87,3.45) rectangle (7.85,2.45);
+% \draw[red,thick] (0.85,3.45) rectangle (1.9,2.45);
+
+\renewcommand{\yRefPosOne}{-3}
+\renewcommand{\xRefPosOne}{2.3}
+\renewcommand{\xRefIncrementOne}{6.0}
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+    {\includegraphics[width=5.0cm]{cdr_plot2.png}};
+ 
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,\yRefPosOne)
+    {\includegraphics[width=5.0cm]{cdr_plot3.png}};    
+
+\node[inner sep=0pt] (tmp) at (1.8,-2.46)
+    {\mySmallCenterBox{ CLIC CDR }};
+
+\node[inner sep=0pt] (tmp) at (9.2,-2.2)
+    {\mySmallCenterBox{ CLIC CDR }};
+
+\node[inner sep=0pt] (tmp) at (8.8,-2.5)
+    {\mySmallCenterBox{ Fast simulation }};
+
+\node at (5.8,-0.1) (box){%
+ \begin{minipage}{10.5cm}
+  \begin{tabular}{ l | c | c }
+    \hline    
+    Detector model & CLIC$\_$o2$\_$v04 & FCCee$\_$o4$\_$v01 \\
+    \hline                       
+    VTX Barrel & R = 3.1, 4.4, 5.8 cm & R = \textcolor{red}{1.75}, \textcolor{red}{3.6}, 5.8 cm \\
+    \hline
+    Beampipe material &  0.0017 X/X0 & \textcolor{red}{0.0049} X/X0 \\
+    \hline
+    Beampipe radius &  30 mm & \textcolor{red}{15} mm \\
+    \hline  
+
+    \hline  
+  \end{tabular}
+ \end{minipage}
+};
+
+\node [mybox] at (5.2,2.1) (box){%
+    \begin{minipage}{10.5cm}
+%        \scriptsize 
+        \begin{itemize}
+         \item Impact of the material budget in the VTX on the d0 resolution
+	 \item Material budget of VTX detector is varied by changing the density of the carbon fiber support structure in barrel layers
+         \item 1 GeV muons at theta = 35, 90. CLIC CDR plots are used as reference  
+        \end{itemize}
+
+    \end{minipage}
+};
+\node[fancytitle, right=15pt] at (box.north west) {Motivation};
+
+\end{tikzpicture}
+
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{d0 resolution} 
+
+\begin{tikzpicture}[overlay]
+
+%% HELPER draw advanced helping grid with axises:
+% \draw(0,-4) to[grid with coordinates] (11.5,4);
+
+\renewcommand{\yRefPosOne}{0.5}
+\renewcommand{\xRefPosOne}{2.3}
+\renewcommand{\xRefIncrementOne}{6.0}
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+    {\includegraphics[width=6.0cm]{CLIC_different_fitting.eps}};
+ 
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,\yRefPosOne)
+    {\includegraphics[width=6.0cm]{FCCee_different_fitting.eps}};
+
+% \draw[red,thick] (6.87,3.45) rectangle (7.85,2.45);
+% \draw[red,thick] (0.85,3.45) rectangle (1.9,2.45);
+    
+\node [mybox] at (5.2,-3.75) (box){%
+    \begin{minipage}{10.5cm}
+%        \scriptsize 
+        \begin{itemize}
+         \item Comparison of nominal CLIC and FCCee detector models with CLIC$\_$ILD
+	 \item Test different fitting approaches (more on next slide). 
+	  \begin{itemize}
+	   \item $d0$ residuals are fitted in ranges: -500..500 $\mu m$; $\pm2.0\sigma$ and $\pm1.5\sigma$
+	  \end{itemize}
+	 \item Take $\pm2.0\sigma$ fitting range as working approach.
+
+        \end{itemize}
+
+    \end{minipage}
+};
+    
+\end{tikzpicture}
+
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Fitting procedure, CLIC$\_$o2$\_$v04$\_$p1, theta = 35} 
+
+\begin{tikzpicture}[overlay]
+
+%% HELPER draw advanced helping grid with axises:
+% \draw(0,-4) to[grid with coordinates] (11.5,4);
+
+
+
+\renewcommand{\yRefPosOne}{1.6}
+\renewcommand{\xRefPosOne}{1.2}
+\renewcommand{\xRefIncrementOne}{4.0}
+\renewcommand{\yRefPosTwo}{-2.8}
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+    {\includegraphics[width=\xRefIncrementOne cm]{supDens0312_pt1_theta35.pdf}};
+ 
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,\yRefPosOne)
+    {\includegraphics[width=\xRefIncrementOne cm]{supDens0312_pt1_theta35_2sigma.pdf}};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + 2*\xRefIncrementOne,\yRefPosOne)
+    {\includegraphics[width=\xRefIncrementOne cm]{supDens0312_pt1_theta35_015sigma.pdf}};
+ 
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosTwo)
+    {\includegraphics[width=\xRefIncrementOne cm]{supDens1640_pt1_theta35.pdf}};
+ 
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,\yRefPosTwo)
+    {\includegraphics[width=\xRefIncrementOne cm]{supDens1640_pt1_theta35_2sigma.pdf}};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + 2*\xRefIncrementOne,\yRefPosTwo)
+    {\includegraphics[width=\xRefIncrementOne cm]{supDens1640_pt1_theta35_015sigma.pdf}};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,1)
+    {\mySmallCenterBox{ 0.5x of nominal density of VTX support structure in double layers}};
+\node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,-3.5)
+    {\mySmallCenterBox{ 2.5x of nominal density of VTX support structure in double layers }};
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne,-0.55)
+    {\mySmallCenterBox{ fit over all range }};
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne + 0,-0.55)
+    {\mySmallCenterBox{ refit within $\pm2\sigma$ }};
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne + 2* \xRefIncrementOne + 0,-0.55)
+    {\mySmallCenterBox{ refit within $\pm1.5\sigma$ }};
+
+
+
+%  \draw(0,-4) to[grid with coordinates] (11.5,4);
+ \draw[blue,thick] (5.43,2.1) rectangle (7.11,2.3);
+ \draw[blue,thick] (5.43-\xRefIncrementOne,2.1) rectangle (7.11-\xRefIncrementOne,2.3);
+ \draw[blue,thick] (5.5,2.2-\yRefPosOne+\yRefPosTwo) rectangle (7.11,2.4-\yRefPosOne+\yRefPosTwo);
+ \draw[blue,thick] (5.5-\xRefIncrementOne,2.2-\yRefPosOne+\yRefPosTwo) rectangle (7.11-\xRefIncrementOne,2.4-\yRefPosOne+\yRefPosTwo);
+
+\end{tikzpicture}
+
+\end{frame}
+%------------------------------------------------
+
+
+% %------------------------------------------------
+% \begin{frame}
+% \frametitle{d0 resolution} 
+% 
+% \begin{tikzpicture}[overlay]
+% 
+% %% HELPER draw advanced helping grid with axises:
+% % \draw(0,-4) to[grid with coordinates] (11.5,4);
+% 
+% \renewcommand{\yRefPosOne}{0.5}
+% \renewcommand{\xRefPosOne}{2.3}
+% \renewcommand{\xRefIncrementOne}{6.0}
+% 
+%  \node[inner sep=0pt] (tmp) at (\xRefPosOne,\yRefPosOne)
+%     {\includegraphics[width=6.0cm]{FCCee_vs_FCCeeCLIVTX4tesla.png}};
+%  
+%  \node[inner sep=0pt] (tmp) at (\xRefPosOne + \xRefIncrementOne,\yRefPosOne)
+%     {\includegraphics[width=6.0cm]{FCCee_vs_FCCeeCLIVTX4tesla_withBeampipe.png}};
+% 
+% \node [mybox] at (5.2,-3.75) (box){%
+%     \begin{minipage}{10.5cm}
+% %        \scriptsize 
+%         \begin{itemize}
+%          \item Comparison of nominal CLIC and FCCee detector models with CLIC$\_$ILD
+% 	 \item Compare with FCCee detector model with CLIC-like VTX layout and 4 tesla magnetic field (but FCCee beampipe)
+% 	 \item Right-hand histograms are shown as function of total beampipe + VTX material budget (instead of material per double layer)
+%         \end{itemize}
+% 
+%     \end{minipage}
+% };
+%     
+% \end{tikzpicture}
+% 
+% \end{frame}
+
+
+\end{document}
+
