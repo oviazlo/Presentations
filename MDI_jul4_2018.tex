@@ -1,0 +1,478 @@
+\documentclass[8pt]{beamer}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+
+\usetheme{Warsaw}
+\usecolortheme{rose}
+\usepackage{multicol}
+\usepackage{epstopdf}
+\usepackage[italic]{hepnames}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{bbding}
+\usepackage{gensymb}
+\usepackage{upgreek}
+\lstset{breakatwhitespace,
+language=C++,
+columns=fullflexible,
+keepspaces,
+breaklines,
+tabsize=3, 
+showstringspaces=false,
+extendedchars=true}
+
+% TikZ includes!!!
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\tikzstyle{every picture}+=[remember picture]
+\input{/home/oviazlo/Desktop/beamerPresentations/myReports/latexHelpScripts/tikzGrid.tex}
+
+
+\begin{document}
+
+% custom colors
+\definecolor{olive}{rgb}{0.3, 0.4, .1}
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\definecolor{title}{RGB}{255,0,90}
+\definecolor{dgreen}{rgb}{0.,0.6,0.}
+\definecolor{gold}{rgb}{1.,0.84,0.}
+\definecolor{JungleGreen}{cmyk}{0.99,0,0.52,0}
+\definecolor{BlueGreen}{cmyk}{0.85,0,0.33,0}
+\definecolor{RawSienna}{cmyk}{0,0.72,1,0.45}
+\definecolor{Magenta}{cmyk}{0,1,0,0}
+
+\definecolor{PixelColor}{RGB}{207,232,139}
+\definecolor{SCTColor}{RGB}{167,166,255}
+\definecolor{TRTColor}{RGB}{250,224,140}
+\definecolor{grayColor}{RGB}{153,153,153}
+
+\newcommand{\yRefPosOne}{0.0}
+\newcommand{\xRefPosOne}{0.0}
+\newcommand{\yRefPosTwo}{0.0}
+\newcommand{\xRefPosTwo}{0.0}
+\newcommand{\yRefIncrementOne}{0.0}
+\newcommand{\xRefIncrementOne}{0.0}
+\newcommand{\yRefIncrementTwo}{0.0}
+\newcommand{\xRefIncrementTwo}{0.0}
+
+\graphicspath{ {/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/fromNote_Jul4/} }
+
+
+\DeclareGraphicsExtensions{.eps, .pdf, .png}
+
+\newcommand{\myBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+}
+
+% For nice block (provided by Oleh)
+\tikzstyle{myBox} = [draw=red, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+    
+\tikzstyle{PixelBox} = [draw=PixelColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{SCTBox} = [draw=SCTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{TRTBox} = [draw=TRTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+
+% poster advertisement
+\newcommand{\myCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+  }
+}
+
+\newcommand{\mySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\small #2}}
+    }\par
+  }
+}
+
+\newcommand{\myVerySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\scriptsize #2}}
+    }\par
+  }
+}
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\newcommand{\myNode}{\tikz[baseline,inner sep=1pt] \node[anchor=base]}
+
+\tikzstyle{fancytitle} =[fill=white!15, text=black]
+
+\definecolor{light-gray}{gray}{0.95}
+% poster advertisement
+
+
+\title[Calorimetry performance with CLD \hspace{14.0em}\insertframenumber/
+\inserttotalframenumber]{ Calorimetry and PID performance with CLD }
+
+
+	\author[Oleksandr Viazlo]{Oleksandr Viazlo\\ 
+	{\small }
+	}
+	\institute{\small CERN\\} 
+	
+       
+	\date{4 July 2018}
+
+% 	\logo{ \ifplacelogo \includegraphics[height=1.8cm]{./ID_week2/lund_uni-logo_s.pdf} \hspace{0.4cm} \fi}
+
+	
+   	\frame{\titlepage}
+
+   	
+
+\placelogofalse
+
+%*****************************************************************************
+\begin{frame}{\large \large Photon energy resolution  and $K_L^0$ resolutions}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.7,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{jun7_photonRes_barrel_vs_full_v2.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3.3,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{jun28_kaonRes_vs_energy.pdf}};
+    
+ 
+ \node  at (\xRefPosOne+0.1,\yRefPosOne-1.9) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+  \item Photon energy resolution (left)  and neutral hadron resolutions of \PKzL's (right) as a function of energy in the barrel region, transition region and endcap.\\[+0.2cm]
+  \item Energy response distributions are iteratively fitted with a Gaussian within a range $\pm3\sigma$\\[+0.2cm]
+  
+%   ECAL
+%    1  p0           1.13097e-01   7.88838e-03   4.21011e-06   7.01453e-08
+%    2  p1           1.51617e+01   4.74127e-02   4.91653e-05   1.14714e-08
+%  HCAL barrel
+%    1  p0           6.52800e-01   3.98079e-02   3.85090e-04  -2.95222e-09
+%    2  p1           4.73880e+01   2.11919e-01   2.05004e-03  -5.54559e-10
+% HCAL endcap
+%    1  p0           7.82335e-01   7.56244e-02   3.29232e-04  -5.61127e-09
+%    2  p1           4.52609e+01   4.06539e-01   1.76987e-03  -1.12410e-09
+
+
+
+    \end{itemize}
+    \end{minipage}
+  };
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Muon identification efficiency}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.7,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_muons_eff_vs_energy.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3.3,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_muons_eff_vs_cosTheta.pdf}};
+    
+ 
+ \node  at (\xRefPosOne+0.1,\yRefPosOne-1.9) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item Charged reconstructed particle required to satisfy following matching criteria  to ``true'' particle:
+   \begin{itemize}
+    \item the same PDG code\\[0.1cm]
+    \item angular matching: $|\phi_{reco}-\phi_{true}|< 2$ mrad and $|\theta_{reco}-\theta_{     true}|< 1$ mrad\\[0.1cm]
+    \item energy matching: $|p_T^{reco} - p_T^{true}| < 5\%$\\[0.2cm]
+   \end{itemize}
+  \item $>99\%$ muon efficiency for all energies
+  
+    \end{itemize}
+    \end{minipage}
+  };
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Pion identification efficiency}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.7,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_pions_eff_vs_energy.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3.3,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_pions_eff_vs_cosTheta.pdf}};
+    
+ 
+ \node  at (\xRefPosOne+0.1,\yRefPosOne-1.3) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item $>90\%$ pion efficiency at low energies,  $>95\%$ starting from 20 GeV \\[0.2cm]
+   \item more tight muon ID cuts are used to partially recover pion misidentification as muons
+  
+    \end{itemize}
+    \end{minipage}
+  };
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Electron identification efficiency}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.7,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_electrons_eff_vs_energy.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3.3,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_electrons_eff_vs_cosTheta.pdf}};
+    
+ 
+ \node  at (\xRefPosOne+0.1,\yRefPosOne-1.9) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item Bremsstrahlung recovery algorithm:\\[0.1cm]
+   \begin{itemize}
+    \item preselect close by photons (within $|\phi_{reco}-\phi_{true}|< 20$ mrad and $|\theta_{reco}-\theta_{true}|< 1$ mrad)\\[0.1cm]
+    \item dress the electron momentum by summing photon four momenta\\[0.1cm]
+    \item impose looser energy matching requirement for dressed electrons \\(reconstructed energy within 5~$\sigma_{ECAL}$)\\[0.2cm]
+   \end{itemize}
+   \item $>95\%$ electron efficiency starting from 20 GeV \\[0.2cm]
+  
+    \end{itemize}
+    \end{minipage}
+  };
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Photon identification efficiency}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.7,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_photons_noConv_eff_vs_energy.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3.3,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{single_particle_ID_efficiency/jun22_photons_conv_eff_vs_energy.pdf}};
+    
+ 
+ \node  at (\xRefPosOne+0.1,\yRefPosOne-1.9) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+    \item The same angular matching criteria
+    \item Reconstructed energy has to be within 5~$\sigma_{ECAL}$ (5$\times0.15 \sqrt{E}$)
+    \item $>99\%$ ID efficiency for unconverted photons (left plot)
+    \item $>90\%$ ID efficiency starting from 50 GeV for converted photons with applying Bremsstrahlung recovery algorithm (right plot)
+  
+    \end{itemize}
+    \end{minipage}
+  };
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Jet Energy Resolution}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.7,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{jun29_Zuds91_vs_Zuds365.pdf}};
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne+3.3,\yRefPosOne+2.0)
+    {\includegraphics[width=6cm]{JER_SWC_noWC_vs_energy_res7.pdf}};
+    
+ 
+ \node  at (\xRefPosOne+0.1,\yRefPosOne-1.9) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item Jet energy resolution as function of $\cos \theta$ at 91 and 365 GeV energy\\[0.1cm]
+   \item Resolution: 4.5-5$\%$ for 45.5 GeV jets, 3-4$\%$ for 182.5 GeV jets\\[0.1cm]
+   \item Applying software compensation improves the energy resolution of jets  by 5-7$\%$\\[0.1cm]
+  
+    \end{itemize}
+    \end{minipage}
+  };
+
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+%*****************************************************************************
+\begin{frame}{\large \large Outlook}
+
+\renewcommand{\yRefPosOne}{-1.5}
+\renewcommand{\xRefPosOne}{5.3}
+\renewcommand{\xRefIncrementOne}{5.5}
+\begin{tikzpicture}[overlay]
+
+%   \node  at (\xRefPosOne+0.4,\yRefPosOne+4.5) (box){%
+%     \begin{minipage}{1.1\textwidth}
+%   \begin{itemize}
+%   \item ???
+%     \end{itemize}
+%     \end{minipage}
+%   };
+    
+ \node[inner sep=0pt] (tmp) at (\xRefPosOne-2.6,\yRefPosOne+1.4)
+    {\includegraphics[width=5cm]{../jun19_2018/muonEff_bbbar_FCCee/muonEff_bbar_vs_vertexR.pdf}};
+    
+%    \node  at (\xRefPosOne+3.5,\yRefPosOne+3.2) (box){%
+%     \begin{minipage}{0.6\textwidth}
+%   \begin{itemize}
+%   \small
+%    \item[*] Conformal tracking has difficulties to 
+%    \item[*] 
+%      \end{itemize}
+%     \end{minipage}
+%   };
+ 
+ \node  at (\xRefPosOne+0.5,\yRefPosOne+4.2) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item Muon efficiency with $b\bar{b}$ sample at 365 GeV - seems like tracking-related issue \\[0.3cm]
+     \end{itemize}
+    \end{minipage}
+  };
+
+  \node  at (\xRefPosOne+0.5,\yRefPosOne-2.0) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item Lepton identification efficiency in $t\bar{t}$ events - work in progress
+   \item Background contribution to calorimeter energy measurements as a function of time integration window
+     \end{itemize}
+    \end{minipage}
+  };
+  
+% % HELPER draw advanced helping grid with axises:
+% \draw(-0.5,-4) to[grid with coordinates] (11.5,4);
+\end{tikzpicture}
+ 
+\end{frame}
+%*****************************************************************************
+
+\backupbegin
+%*****************************************************************************
+\begin{frame}
+\frametitle{BACKUP} 
+ 
+\end{frame}
+%*****************************************************************************
+
+\backupend
+%********************************************************
+\end{document}
+

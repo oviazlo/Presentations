@@ -1,0 +1,216 @@
+\documentclass[8pt]{beamer}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+
+\usetheme{Warsaw}
+\usecolortheme{rose}
+\usepackage{multicol}
+\usepackage{epstopdf}
+\usepackage[italic]{hepnames}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{bbding}
+\usepackage{gensymb}
+\usepackage{upgreek}
+\lstset{breakatwhitespace,
+language=C++,
+columns=fullflexible,
+keepspaces,
+breaklines,
+tabsize=3, 
+showstringspaces=false,
+extendedchars=true}
+
+% TikZ includes!!!
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\tikzstyle{every picture}+=[remember picture]
+\input{/home/oviazlo/Desktop/beamerPresentations/myReports/latexHelpScripts/tikzGrid.tex}
+
+
+\begin{document}
+
+% custom colors
+\definecolor{olive}{rgb}{0.3, 0.4, .1}
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\definecolor{title}{RGB}{255,0,90}
+\definecolor{dgreen}{rgb}{0.,0.6,0.}
+\definecolor{gold}{rgb}{1.,0.84,0.}
+\definecolor{JungleGreen}{cmyk}{0.99,0,0.52,0}
+\definecolor{BlueGreen}{cmyk}{0.85,0,0.33,0}
+\definecolor{RawSienna}{cmyk}{0,0.72,1,0.45}
+\definecolor{Magenta}{cmyk}{0,1,0,0}
+
+\definecolor{PixelColor}{RGB}{207,232,139}
+\definecolor{SCTColor}{RGB}{167,166,255}
+\definecolor{TRTColor}{RGB}{250,224,140}
+\definecolor{grayColor}{RGB}{153,153,153}
+
+\newcommand{\yRefPosOne}{0.0}
+\newcommand{\xRefPosOne}{0.0}
+\newcommand{\yRefPosTwo}{0.0}
+\newcommand{\xRefPosTwo}{0.0}
+\newcommand{\yRefIncrementOne}{0.0}
+\newcommand{\xRefIncrementOne}{0.0}
+\newcommand{\yRefIncrementTwo}{0.0}
+\newcommand{\xRefIncrementTwo}{0.0}
+
+\graphicspath{ {/home/oviazlo/Desktop/beamerPresentations/FCCee/pictures/jun19_2018/} }
+
+
+\DeclareGraphicsExtensions{.eps, .pdf, .png}
+
+\newcommand{\myBox}[2][pink] {
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+}
+
+% For nice block (provided by Oleh)
+\tikzstyle{myBox} = [draw=red, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+    
+\tikzstyle{PixelBox} = [draw=PixelColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{SCTBox} = [draw=SCTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+\tikzstyle{TRTBox} = [draw=TRTColor, fill=blue!1, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=9pt]
+
+% poster advertisement
+\newcommand{\myCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{#2}
+    }\par
+  }
+}
+
+\newcommand{\mySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\small #2}}
+    }\par
+  }
+}
+
+\newcommand{\myVerySmallCenterBox}[2][pink] {
+   {\centering
+    \noindent\colorbox{#1}{
+	\textbf{{\scriptsize #2}}
+    }\par
+  }
+}
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\newcommand{\myNode}{\tikz[baseline,inner sep=1pt] \node[anchor=base]}
+
+\tikzstyle{fancytitle} =[fill=white!15, text=black]
+
+\definecolor{light-gray}{gray}{0.95}
+% poster advertisement
+
+
+\title[Background overlay for CLD \hspace{14.0em}\insertframenumber/
+\inserttotalframenumber]{ Background overlay for CLD}
+
+
+	\author[Oleksandr Viazlo]{Oleksandr Viazlo\\ 
+	{\small on behalf of the CLICdp and FCC-ee collaborations}
+	}
+	\institute{\small CERN\\} 
+	
+       
+	\date{22 May 2018}
+
+% 	\logo{ \ifplacelogo \includegraphics[height=1.8cm]{./ID_week2/lund_uni-logo_s.pdf} \hspace{0.4cm} \fi}
+
+	
+%    	\frame{\titlepage}
+
+   	
+
+\placelogofalse
+
+
+
+
+%*****************************************************************************
+\begin{frame}{\large \large Time window settings for background overlay processor for CLD detector}
+\renewcommand{\yRefPosOne}{-0.9}
+\renewcommand{\xRefPosOne}{4.2}
+\renewcommand{\xRefIncrementOne}{7.5}
+\begin{tikzpicture}[overlay]
+
+
+ \node [PixelBox] at (\xRefPosOne+1,\yRefPosOne+3.1) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item VXD detector for CLD model is based on the ALICE ITS upgrade - 10$\mu$s readout window
+    \item Tracking performance studies with background overlaid was done with settings:
+   \begin{itemize}
+    \item 400 ns (20 BX) for 91 GeV - limitation from cpu/memory usage
+    \item 10$\mu$s (3BX) for 365 GeV \\[0.3cm]
+   \end{itemize}
+    \end{itemize}
+    \end{minipage}
+  };
+\node[fancytitle, right=15pt] at (box.north west) {Tracking};
+
+ \node [PixelBox] at (\xRefPosOne+1,\yRefPosOne+0.9) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item ECAL and HCAL detectors for CLD are identical to ones in CLIC - 10 ns integration window
+   \item Allows to achieve a few ns precision for cluster timing
+    \end{itemize}
+    \end{minipage}
+  };
+\node[fancytitle, right=15pt] at (box.north west) {Calorimetery};
+ 
+  \node [TRTBox] at (\xRefPosOne+1,\yRefPosOne-2.2) (box){%
+    \begin{minipage}{1.1\textwidth}
+  \begin{itemize}
+   \item Pandora attempts to associate all tracks to calorimeter clusters
+   \begin{itemize}
+    \item tracks reconstructed in $\mu$s time window
+    \item cluster reconstructed in ns time window
+   \end{itemize}
+   \item What is the best way to combine tracks and cluster in order to obtain the largest background rejection power?
+   \item For jet performance studies one can increase integration time window for calorimeter to match the window used for tracking $\to$ decrease background rejection power (require recalibration of calorimeter)?
+   
+
+    \end{itemize}
+    \end{minipage}
+  };
+\node[fancytitle, right=15pt] at (box.north west) {Jet performance with background overlay};
+ 
+ \end{tikzpicture}
+\end{frame}
+%*****************************************************************************
+% 
+% \backupbegin
+% %*****************************************************************************
+% \begin{frame}
+% \frametitle{BACKUP} 
+%  
+% \end{frame}
+% %*****************************************************************************
+% 
+% \backupend
+%********************************************************
+\end{document}
+
